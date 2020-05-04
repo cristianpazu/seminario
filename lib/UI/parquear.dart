@@ -1,6 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:proyectorainbox/const/const.dart';
+
 
 class Parquepage extends StatefulWidget {
   Parquepage({Key key}) : super(key: key);
@@ -11,10 +11,12 @@ class Parquepage extends StatefulWidget {
 
 class ParquepageState extends State<Parquepage> {
   String nn;
+  String hh;
+  String placa;
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: Text('Registro de personas')),
+      appBar: AppBar(title: Text('Registro de Vehiculos')),
       body: SingleChildScrollView(
         child: Center(
           child: Column(
@@ -33,7 +35,12 @@ class ParquepageState extends State<Parquepage> {
                   nn = newValue;
                 });
               },
-              items: <String>['One', '4horsa-5000', 'tree', 'tt']
+              items: <String>[
+                'Carlos', 
+                'Bradd', 
+                'Angelina', 
+                'Rambo'
+                ]
                   .map<DropdownMenuItem<String>>((String value) {
                 return DropdownMenuItem<String>(
                   value: value,
@@ -42,13 +49,65 @@ class ParquepageState extends State<Parquepage> {
               }).toList(),
             ),
           ),
-          TextField(
-                decoration: InputDecoration(
-                    hintText: Const.horas,
-                    icon: Icon(Icons.create),
-                    border: OutlineInputBorder(
-                        borderRadius: BorderRadius.circular(20.0))),
-              ),
+           Divider(),
+          Container(
+            child:DropdownButtonHideUnderline(
+            child: DropdownButton<String>(
+              hint: Text('Tarifa'),
+              value: hh,
+              icon: Icon(Icons.arrow_downward),
+              elevation: 16,
+              onChanged: (String newValue) {
+                setState(() {
+                  hh = newValue;
+                });
+              },
+              items: <String>['1h-2500', 
+              '2h-5000', 
+              '3h-7500', 
+              '4h-a-5h-12500',
+              '6h-a-85h-15000',
+              '8-a-12h-22000',
+              ]
+                  .map<DropdownMenuItem<String>>((String value) {
+                return DropdownMenuItem<String>(
+                  value: value,
+                  child: Text(value),
+                );
+              }).toList(),
+            ),
+          ),
+          //
+          ),
+          Divider(),
+          Container(
+            child:DropdownButtonHideUnderline(
+            child: DropdownButton<String>(
+              hint: Text('Placa'),
+              value: placa,
+              icon: Icon(Icons.arrow_downward),
+              elevation: 16,
+              onChanged: (String newValue) {
+                setState(() {
+                  placa = newValue;
+                });
+              },
+              items: <String>[
+              '4fjkl', 
+              '35ghdd', 
+              '35ghd'
+             
+              ]
+                  .map<DropdownMenuItem<String>>((String value) {
+                return DropdownMenuItem<String>(
+                  value: value,
+                  child: Text(value),
+                );
+              }).toList(),
+            ),
+          ),
+          //
+          ),
             //
               Padding(
                 padding: const EdgeInsets.all(20),

@@ -21,14 +21,14 @@ class MyAppp extends StatelessWidget {
       home: Scaffold(
         appBar: AppBar(title: const Text(_title)),
         body: Center(
-          child: MyStatefulWidget(),
+          child: Pruebas2(),
         ),
       ),
     );
   }
 }
 
-class MyStatefulWidget extends StatefulWidget {
+/*class MyStatefulWidget extends StatefulWidget {
   MyStatefulWidget({Key key}) : super(key: key);
 
   @override
@@ -36,11 +36,12 @@ class MyStatefulWidget extends StatefulWidget {
 }
 
 class _MyStatefulWidgetState extends State<MyStatefulWidget> {
-  String dropdownValue = 'One';
+  String dropdownValue;
 
   @override
   Widget build(BuildContext context) {
-    return DropdownButton<String>(
+    return DropdownButtonHideUnderline(
+    child: DropdownButton<String>(
       value: dropdownValue,
       icon: Icon(Icons.arrow_downward),
       iconSize: 24,
@@ -62,6 +63,62 @@ class _MyStatefulWidgetState extends State<MyStatefulWidget> {
           child: Text(value),
         );
       }).toList(),
+    ),
     );
+    
+    
+
+  
+  
+
   }
+}*/
+class Pruebas2 extends StatefulWidget {
+  Pruebas2({Key key}) : super(key: key);
+
+  @override
+  _Pruebas2State createState() => _Pruebas2State();
 }
+
+class _Pruebas2State extends State<Pruebas2> {
+  String dropdownValue;
+  List<String>items2=<String>[
+'green',
+'rojo',
+'amarillo',
+'azul',
+'blanco'
+  ];
+
+  @override
+  Widget build(BuildContext context) {
+    return  DropdownButton<String>(
+      value: dropdownValue,
+      icon: Icon(Icons.arrow_downward),
+      iconSize: 24,
+      elevation: 16,
+      onChanged: (String newValue) {
+        setState(() {
+          dropdownValue = newValue;
+        });
+      },
+      items: items2
+          .map<DropdownMenuItem<String>>((String value) {
+        return DropdownMenuItem<String>(
+          value: value,
+          child: Text(value),
+        );
+      }).toList(),
+    );
+   // );
+    
+    
+
+  
+  
+
+  }
+
+  }
+ 
+
