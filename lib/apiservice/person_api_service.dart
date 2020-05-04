@@ -19,8 +19,10 @@ class ProductApiService {
     var res = await http.post(uri,
         headers: {HttpHeaders.contentTypeHeader: Const.contenTypeHeader},
         body: body2);
-
     var resBody = json.decode(res.body);
+    print(res.statusCode);
+    print(resBody);
+    
     apiResponse.statusResponse = res.statusCode;
 
     if (apiResponse.statusResponse == 200) {
@@ -29,6 +31,10 @@ class ProductApiService {
     }
     return apiResponse;
   }
+  //rajyhdsjrmggjk heroku
+  //1020d8c165f18bdba9c737e763b60d8d1b3862c84c0b70da3064c9e3defd8ebe password
+  //heroku pg:psql postgresql-curly-55487 --app servicio123rest bsde mantenimiento
+  //databse dc3gj60bqi7bga
 
    Future<ApiResponse> updateProduct(Product product) async {
     ApiResponse apiResponse = ApiResponse(statusResponse: 0);
