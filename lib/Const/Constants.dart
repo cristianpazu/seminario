@@ -9,10 +9,10 @@ class Const {
   
 //////////////7
 ///
-///
-static const String urlAuthority = "https://servicio123rest.herokuapp.com:8084";
+///ec2-52-7-39-178.compute-1.amazonaws.com
+static const String urlAuthority = "servicio123rest.herokuapp.com";
   static const String contenTypeHeader = "application/json";
-  static const String pathServiceProduct = "/api/v1/personas/insert";
+  static const String pathServiceProduct = "/api/v1/personas";
   static const String pathServiceDiscard = "/api/inventory/discard/insert";
   static const String pathServiceStatus = "/api/inventory/status/history/insert";
   static const String pathServiceDiscardL = "/api/inventory/discard/all";
@@ -20,7 +20,7 @@ static const String urlAuthority = "https://servicio123rest.herokuapp.com:8084";
   static const String pathServiceProductUpdate = "";
   static const String pathServiceStatusUpdate = "";
   static const String pathServiceDiscardDelete = "";
-  static const String pathServiceProductoLista ="/api/inventory/product/all";
+  static const String pathServiceProductoLista ="/api/v1/personas";
   static const String createMessage = "Creación exitosa";
   //product
   static const String titleProduct = "Registro de producto";

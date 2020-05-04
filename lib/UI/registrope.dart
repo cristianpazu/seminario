@@ -1,5 +1,3 @@
-
-
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:proyectorainbox/Const/Constants.dart';
@@ -55,7 +53,11 @@ class RegistropageState extends State<Registropage>
     return Scaffold(
       appBar: AppBar(title: Text('Registro de personas')),
       body: SingleChildScrollView(
+          
         child: Center(
+          child:Form(
+          key: _formKey,
+                autovalidate: _autovalidate,
           child: Column(
             children: <Widget>[
               Padding(
@@ -133,7 +135,9 @@ class RegistropageState extends State<Registropage>
             ],
           ),
         ),
+        )
       ),
+
     );
   }
     
