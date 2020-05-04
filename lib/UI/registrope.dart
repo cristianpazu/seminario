@@ -66,7 +66,7 @@ class RegistropageState extends State<Registropage>
               ),
               TextField(
                   decoration: InputDecoration(
-                      hintText: Const.nombre,
+                      //hintText: Const.nombre,
                       labelText: Const.nombre,
                       icon: Icon(Icons.person_pin),
                       border: OutlineInputBorder(
@@ -80,7 +80,7 @@ class RegistropageState extends State<Registropage>
               ),
               TextField(
                   decoration: InputDecoration(
-                      hintText: Const.apellido,
+                      //hintText: Const.apellido,
                       labelText: Const.apellido,
                       icon: Icon(Icons.person_pin),
                       border: OutlineInputBorder(
@@ -94,7 +94,7 @@ class RegistropageState extends State<Registropage>
               ),
               TextField(
                   decoration: InputDecoration(
-                      hintText: Const.cedula,
+                      //hintText: Const.cedula,
                       labelText: Const.cedula,
                       icon: Icon(Icons.recent_actors),
                       border: OutlineInputBorder(
@@ -108,7 +108,7 @@ class RegistropageState extends State<Registropage>
               ),
               TextField(
                   decoration: InputDecoration(
-                      hintText: Const.placa,
+                      //hintText: Const.placa,
                       labelText: Const.placa,
                       icon: Icon(Icons.directions_car),
                       border: OutlineInputBorder(
