@@ -57,13 +57,11 @@ class RegistropageState extends State<Registropage>
         backgroundColor: Colors.yellow,
       ),
       body: SingleChildScrollView(
-        padding: const EdgeInsets.all(30.0),
+       padding: const EdgeInsets.fromLTRB(30, 40, 30, 30),
         child: Center(
           child: Column(
             children: <Widget>[
-              Padding(
-                padding: const EdgeInsets.all(5),
-              ),
+              //Padding(padding: const EdgeInsets.all(5),),
               TextField(
                   decoration: InputDecoration(
                       //hintText: Const.nombre,

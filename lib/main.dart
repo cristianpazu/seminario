@@ -28,7 +28,7 @@ class MyhomepageState extends State<Myhomepage> {
   void initState() { 
     super.initState();
     Future.delayed(Duration(seconds: 5)).then((value){
-      Navigator.pushReplacement(context, MaterialPageRoute(builder:(context)=>Registropage()));
+      Navigator.pushReplacement(context, MaterialPageRoute(builder:(context)=>Iniciopage()));
     });
     
   }
