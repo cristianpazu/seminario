@@ -10,7 +10,7 @@ class Const {
 //////////////7
 ///
 ///ec2-52-7-39-178.compute-1.amazonaws.com
-static const String urlAuthority = "servicio123rest.herokuapp.com";
+static const String urlAuthority = "secret-shelf-33806.herokuapp.com";
   static const String contenTypeHeader = "application/json";
   static const String pathServiceProduct = "/api/v1/personas";
   static const String pathServiceDiscard = "/api/inventory/discard/insert";

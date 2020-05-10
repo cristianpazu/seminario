@@ -55,7 +55,7 @@ class ListaProductoState extends State<ListaProducto>
     return Scaffold(
       key: _scaffoldKey,
       appBar: AppBar(
-        title: Text('data'),
+        title: Text('Registro de carros'),
         
       ),
 
@@ -77,19 +77,21 @@ class ListaProductoState extends State<ListaProducto>
                         Expanded(
                           child: ListTile(
                             title: Text(
-                              "${listProducto[indice].nombre}",
+                              "Nombre : ${listProducto[indice].nombre}",
                               style: TextStyle(
                                 color: Colors.blueAccent,
                                 fontSize: 21.0,
                               ),
                             ),
                             subtitle: Text(
-                              "Id : ${listProducto[indice].id.toString()}",
+                               "Placa : ${listProducto[indice].placa.toString()}",
+                              //"Id : ${listProducto[indice].id.toString()}",
                               style: TextStyle(
                                 color: Colors.blueGrey,
                                 fontSize: 21.0,
                               ),
                             ),
+                            
                             leading: Icon(
                               Icons.content_paste,
                               color: Colors.orange),

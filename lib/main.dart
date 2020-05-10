@@ -3,7 +3,6 @@ import 'package:google_fonts/google_fonts.dart';
 import 'package:proyectorainbox/UI/registrope.dart';
 
 import 'UI/homepage.dart';
-import 'UI/listarproducto.dart';
 import 'UI/prueba.dart';
 import 'UI/prueba2.dart';
 
@@ -29,7 +28,7 @@ class MyhomepageState extends State<Myhomepage> {
   void initState() { 
     super.initState();
     Future.delayed(Duration(seconds: 5)).then((value){
-      Navigator.pushReplacement(context, MaterialPageRoute(builder:(context)=>ListaProducto()));
+      Navigator.pushReplacement(context, MaterialPageRoute(builder:(context)=>Iniciopage()));
     });
     
   }

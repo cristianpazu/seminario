@@ -1,5 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:proyectorainbox/UI/listarproducto.dart';
 import 'package:proyectorainbox/UI/operadores.dart';
 import 'package:proyectorainbox/UI/parquear.dart';
 import 'package:proyectorainbox/UI/precio.dart';
@@ -42,11 +43,14 @@ class IniciopageState extends State<Iniciopage> {
         mainAxisSpacing: 10,
         crossAxisCount: 2,
         children: <Widget>[
-          Container(
+          InkWell(
+          child:Container(
             padding: const EdgeInsets.all(8),
+            
             child:Container(
               child: Column(
                 children: <Widget>[
+                  
                   Icon(Icons.account_circle,
                  
                   ),
@@ -61,33 +65,89 @@ class IniciopageState extends State<Iniciopage> {
             ),
             
              //const Text('He\'d have you all unravel at the'),
-            color: Colors.green[100],
+            color: Colors.orange[100],
+            ),
+            onTap: () => {
+                      Navigator.of(context).push(CupertinoPageRoute(
+                          builder: (BuildContext context) => Registropage())),
+                    },
+          ),
+          InkWell(
+         child: Container(
+           child: Column(
+             children: <Widget>[
+               //Icon(Icons.report_problem),
+               Icon(Icons.people),
+              const Text('Ver Personas registradas'),
+             ],
+           ),
            
+            padding: const EdgeInsets.all(8),
+            
+            color: Colors.orange[200],
+            
+          ),
+          onTap: () => {
+                      Navigator.of(context).push(CupertinoPageRoute(
+                          builder: (BuildContext context) => ListaProducto())),
+                    },
+          ),
+          InkWell(
+         child: Container(
+              child: Column(
+             children: <Widget>[
+               //Icon(Icons.report_problem),
+               Icon(Icons.view_headline),
+              const Text('Parquear Vehiculo...'),
+             ],
+           ),
+            padding: const EdgeInsets.all(8),
+         
+          color: Colors.orange[200],
+          ),
+           onTap: () => {
+                      Navigator.of(context).push(CupertinoPageRoute(
+                          builder: (BuildContext context) => Parquepage())),
+                    },
+          ),
+          InkWell(
+          child:Container(
+            child: Column(
+             children: <Widget>[
+               //Icon(Icons.report_problem),
+               Icon(Icons.report_problem),
+              const Text('ver vehiculos parquedos'),
+             ],
+           ),
+            padding: const EdgeInsets.all(8),
+            
+            color: Colors.red[400],
+          ),
           ),
           Container(
+            child: Column(
+             children: <Widget>[
+               //Icon(Icons.report_problem),
+               Icon(Icons.report_problem),
+              const Text('en construccion...'),
+             ],
+           ),
             padding: const EdgeInsets.all(8),
-            child: const Text('Heed not the rabble'),
-            color: Colors.green[200],
+          
+            color: Colors.red[500],
           ),
+          
           Container(
+            child: Column(
+             children: <Widget>[
+               //Icon(Icons.report_problem),
+               Icon(Icons.report_problem),
+              const Text('en construccion...'),
+             ],
+           ),
             padding: const EdgeInsets.all(8),
-            //child: const Text('Sound of screams but the'),
-            color: Colors.green[300],
-          ),
-          Container(
-            padding: const EdgeInsets.all(8),
-            child: const Text('Who scream'),
-            color: Colors.green[400],
-          ),
-          Container(
-            padding: const EdgeInsets.all(8),
-            child: const Text('Revolution is coming...'),
-            color: Colors.green[500],
-          ),
-          Container(
-            padding: const EdgeInsets.all(8),
-            child: const Text('Revolution, they...'),
-            color: Colors.green[600],
+       
+            color: Colors.red[600],
           ),
         ],
       ),
