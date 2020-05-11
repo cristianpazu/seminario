@@ -6,6 +6,7 @@ import 'package:proyectorainbox/UI/parquear.dart';
 import 'package:proyectorainbox/UI/precio.dart';
 import 'package:proyectorainbox/UI/prueba.dart';
 import 'package:proyectorainbox/UI/registrope.dart';
+import 'package:proyectorainbox/UI/listaParqueos.dart';
 import 'package:flutter/services.dart';
 
 import '../main.dart';
@@ -124,20 +125,26 @@ class IniciopageState extends State<Iniciopage> {
                   ),
                   //To Vehiculos lista
                   InkWell(
-                    child: Container(
+                    highlightColor: Colors.orange,
+                    splashColor: Colors.black,
+                    child: Container(                      
+                      color: Colors.red[700].withOpacity(0.5),
                       child: Container(
                         padding: const EdgeInsets.all(40),
                         child: Column(
                           children: <Widget>[
                             //Icon(Icons.report_problem),
-                            Icon(Icons.report_problem),
-                            const Text('Future'),
+                            Icon(Icons.directions_car),
+                            const Text('Parqueo'),
                           ],
                         ),
                       ),
                       padding: const EdgeInsets.all(8),
-                      color: Colors.red[400],
                     ),
+                    onTap: () => {
+                      Navigator.of(context).push(CupertinoPageRoute(
+                          builder: (BuildContext context) => ListaParqueos())),
+                    },
                   ),
                 ],
               ),
