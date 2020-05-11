@@ -2,25 +2,20 @@ import 'package:proyectorainbox/model/regitro.dart';
 
 import 'regitro.dart';
 
-class Parquear{
+class Parquear {
   int id;
   String estado;
-  Product product;
+  Product persona;
 
-  Parquear({this.id,this.estado,this.product});
+  Parquear({this.id, this.estado, this.persona});
 
-  factory Parquear.fromJson(Map<String, dynamic>parsedJson){
-  return Parquear(
-    id: parsedJson['id'],
-    product: Product.fromJson(parsedJson['product']),
-    estado: parsedJson['estado'],
-    
-  );
+  factory Parquear.fromJson(Map<String, dynamic> parsedJson) {
+    return Parquear(
+        id: parsedJson['id'],
+        persona: Product.fromJson(parsedJson['persona']),
+        estado: parsedJson['estado']);
   }
-   Map<String, dynamic> toJson() => {
-        'id': id,
-        'estado': estado,
-        'product': product,
-      };
 
+  Map<String, dynamic> toJson() =>
+      {'id': id, 'estado': estado, 'persona': persona.toJson()};
 }
