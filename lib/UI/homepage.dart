@@ -49,15 +49,18 @@ class IniciopageState extends State<Iniciopage> {
                 mainAxisSpacing: 10,
                 crossAxisCount: 2,
                 children: <Widget>[
+                  //To Registro
                   InkWell(
+                    highlightColor: Colors.orange,
+                    splashColor: Colors.black,
                     child: Container(
-                      padding: const EdgeInsets.all(8),
-
+                      color: Colors.orange[300].withOpacity(0.5),
                       child: Container(
+                        padding: const EdgeInsets.all(50),
                         child: Column(
                           children: <Widget>[
                             Icon(
-                              Icons.account_circle,
+                              Icons.person_add,
                             ),
                             const Text('Registro'),
                           ],
@@ -65,47 +68,59 @@ class IniciopageState extends State<Iniciopage> {
                       ),
 
                       //const Text('He\'d have you all unravel at the'),
-                      color: Colors.orange[100],
                     ),
                     onTap: () => {
                       Navigator.of(context).push(CupertinoPageRoute(
                           builder: (BuildContext context) => Registropage())),
                     },
                   ),
+                  //To Personas lista
                   InkWell(
+                    highlightColor: Colors.orange,
+                    splashColor: Colors.black,
                     child: Container(
-                      child: Column(
-                        children: <Widget>[
-                          //Icon(Icons.report_problem),
-                          Icon(Icons.people),
-                          const Text('Ver Personas registradas'),
-                        ],
+                      color: Colors.orange[600].withOpacity(0.5),
+                      child: Container(
+                        padding: const EdgeInsets.all(40),
+                        child: Column(
+                          children: <Widget>[
+                            //Icon(Icons.report_problem),
+                            Icon(Icons.people),
+                            const Text('Personas'),
+                          ],
+                        ),
                       ),
                       padding: const EdgeInsets.all(8),
-                      color: Colors.orange[200],
                     ),
                     onTap: () => {
                       Navigator.of(context).push(CupertinoPageRoute(
                           builder: (BuildContext context) => ListaProducto())),
                     },
                   ),
+                  //To Parquear
                   InkWell(
+                    highlightColor: Colors.orange,
+                    splashColor: Colors.black,
                     child: Container(
-                      child: Column(
-                        children: <Widget>[
-                          //Icon(Icons.report_problem),
-                          Icon(Icons.view_headline),
-                          const Text('Parquear Vehiculo...'),
-                        ],
+                      color: Colors.orange[700].withOpacity(0.5),
+                      child: Container(
+                        padding: const EdgeInsets.all(40),
+                        child: Column(
+                          children: <Widget>[
+                            //Icon(Icons.report_problem),
+                            Icon(Icons.local_parking,),
+                            const Text('Registro'),
+                          ],
+                        ),
                       ),
                       padding: const EdgeInsets.all(8),
-                      color: Colors.orange[200],
                     ),
                     onTap: () => {
                       Navigator.of(context).push(CupertinoPageRoute(
                           builder: (BuildContext context) => Parquepage())),
                     },
                   ),
+                  //To Vehiculos lista
                   InkWell(
                     child: Container(
                       child: Column(
