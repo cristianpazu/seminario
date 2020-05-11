@@ -1,18 +1,14 @@
-import 'dart:convert';
 import 'dart:io';
+
 import 'package:proyectorainbox/Const/Constants.dart';
 import 'package:proyectorainbox/model/api_response_model.dart';
-import 'package:proyectorainbox/model/regitro.dart';
+import 'package:proyectorainbox/model/parquear.dart';
 
-import 'package:http/http.dart' as http;
-
-
-
-class ProductApiService {
-  Product _product;
+class ParquearApiservice{
+/*Parquear _parquear;
   ProductApiService();
 
-  Future<ApiResponse> insertProduct(Product product) async{
+  Future<ApiResponse> insertProduct(Parquear parquear) async{
     ApiResponse apiResponse = ApiResponse(statusResponse: 0);
     var body2 = json.encode(product.toJson());
     Uri uri = Uri.http(Const.urlAuthority, Const.pathServiceProduct);
@@ -26,8 +22,8 @@ class ProductApiService {
     apiResponse.statusResponse = res.statusCode;
 
     if (apiResponse.statusResponse == 200) {
-      _product = Product.fromJson(resBody);
-      apiResponse.object = _product;
+      _parquear = Parquear.fromJson(resBody);
+      apiResponse.object = _parquear;
     }
     return apiResponse;
   }
@@ -36,9 +32,9 @@ class ProductApiService {
   //heroku pg:psql postgresql-curly-55487 --app servicio123rest bsde mantenimiento
   //databse dc3gj60bqi7bga
 
-   Future<ApiResponse> updateProduct(Product product) async {
+   Future<ApiResponse> updateProduct(Parquear parquear) async {
     ApiResponse apiResponse = ApiResponse(statusResponse: 0);
-    var body2 = json.encode(product.toJson());
+    var body2 = json.encode(parquear.toJson());
     Uri uri =
         Uri.http(Const.urlAuthority, Const.pathServiceDiscardDelete);
     var res = await http.put(uri,
@@ -49,7 +45,7 @@ class ProductApiService {
     apiResponse.statusResponse = res.statusCode;
 
     if (apiResponse.statusResponse == 200) {
-      _product = Product.fromJson(resBody);
+      _product = Parquear.fromJson(resBody);
       apiResponse.object = _product;
     }
     return apiResponse;
@@ -79,9 +75,9 @@ class ProductApiService {
     }
     return apiResponse;
   }
-  Future<ApiResponse> deleteProduct(Product product) async {
+  Future<ApiResponse> deleteProduct(Parquear parquear) async {
     var queryParameters = {
-      'id': product.id
+      'id': parquear.id
           .toString(), //query del id que permite identificr en el servicion el acceso
     };
     ApiResponse apiResponse = ApiResponse(statusResponse: 0);
@@ -95,5 +91,5 @@ class ProductApiService {
     apiResponse.statusResponse = res.statusCode;
 
     return apiResponse;
-  }
+  }*/
 }

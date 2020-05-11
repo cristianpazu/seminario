@@ -1,5 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:proyectorainbox/UI/listarproducto.dart';
 import 'package:proyectorainbox/UI/operadores.dart';
 import 'package:proyectorainbox/UI/parquear.dart';
 import 'package:proyectorainbox/UI/precio.dart';
@@ -18,15 +19,15 @@ class Iniciopage extends StatefulWidget {
 class IniciopageState extends State<Iniciopage> {
   @override
   Widget build(BuildContext context) {
-
-// FullScreen
+    // FullScreen
     SystemChrome.setEnabledSystemUIOverlays([]);
 
     return Scaffold(
         appBar: AppBar(
           //backgroundColor: Color(0xFF151026),
+          backgroundColor: Colors.yellow,
           title: Text(
-            'Parqueadero Seguro',
+            'PARQUEDERO SEGURO',
             style: TextStyle(
               fontSize: 22,
               fontWeight: FontWeight.w500,
@@ -37,7 +38,6 @@ class IniciopageState extends State<Iniciopage> {
             IconButton(
                 icon: Icon(Icons.traffic, color: Colors.black), onPressed: null)
           ],
-          backgroundColor: Colors.yellow,
         ),
         body: CustomScrollView(
           primary: false,
@@ -52,6 +52,7 @@ class IniciopageState extends State<Iniciopage> {
                   InkWell(
                     child: Container(
                       padding: const EdgeInsets.all(8),
+
                       child: Container(
                         child: Column(
                           children: <Widget>[
@@ -62,6 +63,8 @@ class IniciopageState extends State<Iniciopage> {
                           ],
                         ),
                       ),
+
+                      //const Text('He\'d have you all unravel at the'),
                       color: Colors.orange[100],
                     ),
                     onTap: () => {
@@ -69,31 +72,74 @@ class IniciopageState extends State<Iniciopage> {
                           builder: (BuildContext context) => Registropage())),
                     },
                   ),
-                  //
-                  Container(
-                    padding: const EdgeInsets.all(8),
-                    child: const Text('Heed not the rabble'),
-                    color: Colors.orange[200],
+                  InkWell(
+                    child: Container(
+                      child: Column(
+                        children: <Widget>[
+                          //Icon(Icons.report_problem),
+                          Icon(Icons.people),
+                          const Text('Ver Personas registradas'),
+                        ],
+                      ),
+                      padding: const EdgeInsets.all(8),
+                      color: Colors.orange[200],
+                    ),
+                    onTap: () => {
+                      Navigator.of(context).push(CupertinoPageRoute(
+                          builder: (BuildContext context) => ListaProducto())),
+                    },
+                  ),
+                  InkWell(
+                    child: Container(
+                      child: Column(
+                        children: <Widget>[
+                          //Icon(Icons.report_problem),
+                          Icon(Icons.view_headline),
+                          const Text('Parquear Vehiculo...'),
+                        ],
+                      ),
+                      padding: const EdgeInsets.all(8),
+                      color: Colors.orange[200],
+                    ),
+                    onTap: () => {
+                      Navigator.of(context).push(CupertinoPageRoute(
+                          builder: (BuildContext context) => Parquepage())),
+                    },
+                  ),
+                  InkWell(
+                    child: Container(
+                      child: Column(
+                        children: <Widget>[
+                          //Icon(Icons.report_problem),
+                          Icon(Icons.report_problem),
+                          const Text('ver vehiculos parquedos'),
+                        ],
+                      ),
+                      padding: const EdgeInsets.all(8),
+                      color: Colors.red[400],
+                    ),
                   ),
                   Container(
+                    child: Column(
+                      children: <Widget>[
+                        //Icon(Icons.report_problem),
+                        Icon(Icons.report_problem),
+                        const Text('en construccion...'),
+                      ],
+                    ),
                     padding: const EdgeInsets.all(8),
-                    //child: const Text('Sound of screams but the'),
-                    color: Colors.orange[300],
+                    color: Colors.red[500],
                   ),
                   Container(
+                    child: Column(
+                      children: <Widget>[
+                        //Icon(Icons.report_problem),
+                        Icon(Icons.report_problem),
+                        const Text('en construccion...'),
+                      ],
+                    ),
                     padding: const EdgeInsets.all(8),
-                    child: const Text('Who scream'),
-                    color: Colors.orange[400],
-                  ),
-                  Container(
-                    padding: const EdgeInsets.all(8),
-                    child: const Text('Revolution is coming...'),
-                    color: Colors.orange[500],
-                  ),
-                  Container(
-                    padding: const EdgeInsets.all(8),
-                    child: const Text('Revolution, they...'),
-                    color: Colors.orange[600],
+                    color: Colors.red[600],
                   ),
                 ],
               ),
