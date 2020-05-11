@@ -14,7 +14,9 @@ class ListaProducto extends StatefulWidget {
 
 class ListaProductoState extends State<ListaProducto>
     with SingleTickerProviderStateMixin {
+
   final GlobalKey<ScaffoldState> _scaffoldKey = GlobalKey<ScaffoldState>();
+
   ProductBloc productBloc;
   ApiResponse apiResponse;
   Product product;

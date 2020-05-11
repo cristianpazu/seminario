@@ -1,5 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:proyectorainbox/UI/listaParqueos.dart';
 import 'package:proyectorainbox/UI/listarproducto.dart';
 import 'package:proyectorainbox/UI/operadores.dart';
 import 'package:proyectorainbox/UI/parquear.dart';
@@ -123,6 +124,10 @@ class IniciopageState extends State<Iniciopage> {
             
             color: Colors.red[400],
           ),
+            onTap: () => {
+              Navigator.of(context).push(CupertinoPageRoute(
+                  builder: (BuildContext context) => ListaParqueos())),
+            },
           ),
           Container(
             child: Column(
