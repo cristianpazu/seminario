@@ -27,7 +27,7 @@ class IniciopageState extends State<Iniciopage> {
           //backgroundColor: Color(0xFF151026),
           backgroundColor: Colors.yellow,
           title: Text(
-            'PARQUEDERO SEGURO',
+            'Parqueadero Manu',
             style: TextStyle(
               fontSize: 22,
               fontWeight: FontWeight.w500,
@@ -138,36 +138,6 @@ class IniciopageState extends State<Iniciopage> {
                       padding: const EdgeInsets.all(8),
                       color: Colors.red[400],
                     ),
-                  ),
-                  //
-                  Container(
-                    child: Container(
-                      padding: const EdgeInsets.all(40),
-                      child: Column(
-                        children: <Widget>[
-                          //Icon(Icons.report_problem),
-                          Icon(Icons.report_problem),
-                          const Text('Future'),
-                        ],
-                      ),
-                    ),
-                    padding: const EdgeInsets.all(8),
-                    color: Colors.red[500],
-                  ),
-                  //
-                  Container(
-                    child: Container(
-                      padding: const EdgeInsets.all(40),
-                      child: Column(
-                        children: <Widget>[
-                          //Icon(Icons.report_problem),
-                          Icon(Icons.report_problem),
-                          const Text('Future'),
-                        ],
-                      ),
-                    ),
-                    padding: const EdgeInsets.all(8),
-                    color: Colors.red[600],
                   ),
                 ],
               ),
