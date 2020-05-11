@@ -1,19 +1,21 @@
+import 'dart:convert';
 import 'dart:io';
 
-import 'package:proyectorainbox/Const/Constants.dart';
+import 'package:proyectorainbox/const/Constants.dart';
 import 'package:proyectorainbox/model/api_response_model.dart';
 import 'package:proyectorainbox/model/parquear.dart';
 
-class ParquearApiservice{
-/*Parquear _parquear;
-  ProductApiService();
+import 'package:http/http.dart' as http;
 
-  Future<ApiResponse> insertProduct(Parquear parquear) async{
+class ParquearApiservice{
+Parquear _parquear;
+
+  Future<ApiResponse> insertParqueos(Parquear parquear) async{
     ApiResponse apiResponse = ApiResponse(statusResponse: 0);
-    var body2 = json.encode(product.toJson());
-    Uri uri = Uri.http(Const.urlAuthority, Const.pathServiceProduct);
+    var body2 = json.encode(parquear.toJson());
+    Uri uri = Uri.http(Consts.urlAuthority, Consts.pathServiceParqueo);
     var res = await http.post(uri,
-        headers: {HttpHeaders.contentTypeHeader: Const.contenTypeHeader},
+        headers: {HttpHeaders.contentTypeHeader: Consts.contenTypeHeader},
         body: body2);
     var resBody = json.decode(res.body);
     print(res.statusCode);
@@ -32,42 +34,41 @@ class ParquearApiservice{
   //heroku pg:psql postgresql-curly-55487 --app servicio123rest bsde mantenimiento
   //databse dc3gj60bqi7bga
 
-   Future<ApiResponse> updateProduct(Parquear parquear) async {
+   Future<ApiResponse> updateParqueos(Parquear parquear) async {
     ApiResponse apiResponse = ApiResponse(statusResponse: 0);
     var body2 = json.encode(parquear.toJson());
     Uri uri =
-        Uri.http(Const.urlAuthority, Const.pathServiceDiscardDelete);
+        Uri.http(Consts.urlAuthority, Consts.pathServiceDiscardDelete);
     var res = await http.put(uri,
-        headers: {HttpHeaders.contentTypeHeader: Const.contenTypeHeader},
+        headers: {HttpHeaders.contentTypeHeader: Consts.contenTypeHeader},
         body: body2);
 
     var resBody = json.decode(res.body);
     apiResponse.statusResponse = res.statusCode;
 
     if (apiResponse.statusResponse == 200) {
-      _product = Parquear.fromJson(resBody);
-      apiResponse.object = _product;
+      _parquear = Parquear.fromJson(resBody);
+      apiResponse.object = _parquear;
     }
     return apiResponse;
   }
 
-  Future<ApiResponse> listarProducto() async {
+  Future<ApiResponse> listParqueos() async {
     ApiResponse apiResponse = ApiResponse(statusResponse: 0);
     Uri uri =
-        Uri.http(Const.urlAuthority, Const.pathServiceProductoLista);
+        Uri.http(Consts.urlAuthority, Consts.pathServiceParqueoList);
     var res = await http.get(
       uri,
-      headers: {HttpHeaders.contentTypeHeader: Const.contenTypeHeader, 
-      HttpHeaders.authorizationHeader: Const.contenTypeHeader },
+      headers: {HttpHeaders.contentTypeHeader: Consts.contenTypeHeader},
     );
 
     var resBody = json.decode(res.body);
     apiResponse.statusResponse = res.statusCode;
-    apiResponse.listProducto = List();
+    apiResponse.listParqueos = List();
 
     if (apiResponse.statusResponse == 200) {
       resBody.forEach((i) {
-        apiResponse.listProducto.add(Product.fromJson(i));
+        apiResponse.listParqueos.add(Parquear.fromJson(i));
         return i;
       });
 
@@ -75,21 +76,21 @@ class ParquearApiservice{
     }
     return apiResponse;
   }
-  Future<ApiResponse> deleteProduct(Parquear parquear) async {
+  Future<ApiResponse> deleteParqueos(Parquear parquear) async {
     var queryParameters = {
       'id': parquear.id
           .toString(), //query del id que permite identificr en el servicion el acceso
     };
     ApiResponse apiResponse = ApiResponse(statusResponse: 0);
 
-    Uri uri = Uri.http(Const.urlAuthority,
-        Const.pathServiceProductDelete, queryParameters);
+    Uri uri = Uri.http(Consts.urlAuthority,
+        Consts.pathServiceProductDelete, queryParameters);
     var res = await http.delete(uri,
-        headers: {HttpHeaders.contentTypeHeader: Const.contenTypeHeader, 
-        HttpHeaders.authorizationHeader: Const.contenTypeHeader});
+        headers: {HttpHeaders.contentTypeHeader: Consts.contenTypeHeader});
 
     apiResponse.statusResponse = res.statusCode;
 
     return apiResponse;
-  }*/
+
+}
 }

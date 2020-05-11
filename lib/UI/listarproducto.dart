@@ -25,8 +25,6 @@ class ListaProductoState extends State<ListaProducto>
     ));
   }
 
-  final List<String> nombres = [];
-  final List<String> cantidad = [];
   List<Product> listProducto = List();
 
   _handleSubmitted() {
@@ -44,7 +42,7 @@ class ListaProductoState extends State<ListaProducto>
   @override
   void initState() {
     super.initState();
-    productBloc = ProductBloc(context);
+    productBloc = ProductBloc();
 
     _handleSubmitted();
   }

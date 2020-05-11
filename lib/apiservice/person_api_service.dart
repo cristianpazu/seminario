@@ -1,6 +1,8 @@
 import 'dart:convert';
 import 'dart:io';
-import 'package:proyectorainbox/Const/Constants.dart';
+
+
+import 'package:proyectorainbox/const/Constants.dart';
 import 'package:proyectorainbox/model/api_response_model.dart';
 import 'package:proyectorainbox/model/regitro.dart';
 
@@ -15,9 +17,9 @@ class ProductApiService {
   Future<ApiResponse> insertProduct(Product product) async{
     ApiResponse apiResponse = ApiResponse(statusResponse: 0);
     var body2 = json.encode(product.toJson());
-    Uri uri = Uri.http(Const.urlAuthority, Const.pathServiceProduct);
+    Uri uri = Uri.http(Consts.urlAuthority, Consts.pathServiceProduct);
     var res = await http.post(uri,
-        headers: {HttpHeaders.contentTypeHeader: Const.contenTypeHeader},
+        headers: {HttpHeaders.contentTypeHeader: Consts.contenTypeHeader},
         body: body2);
     var resBody = json.decode(res.body);
     print(res.statusCode);
@@ -40,9 +42,9 @@ class ProductApiService {
     ApiResponse apiResponse = ApiResponse(statusResponse: 0);
     var body2 = json.encode(product.toJson());
     Uri uri =
-        Uri.http(Const.urlAuthority, Const.pathServiceDiscardDelete);
+        Uri.http(Consts.urlAuthority, Consts.pathServiceDiscardDelete);
     var res = await http.put(uri,
-        headers: {HttpHeaders.contentTypeHeader: Const.contenTypeHeader},
+        headers: {HttpHeaders.contentTypeHeader: Consts.contenTypeHeader},
         body: body2);
 
     var resBody = json.decode(res.body);
@@ -58,11 +60,10 @@ class ProductApiService {
   Future<ApiResponse> listarProducto() async {
     ApiResponse apiResponse = ApiResponse(statusResponse: 0);
     Uri uri =
-        Uri.http(Const.urlAuthority, Const.pathServiceProductoLista);
+        Uri.http(Consts.urlAuthority, Consts.pathServiceProductoLista);
     var res = await http.get(
       uri,
-      headers: {HttpHeaders.contentTypeHeader: Const.contenTypeHeader, 
-      HttpHeaders.authorizationHeader: Const.contenTypeHeader },
+      headers: {HttpHeaders.contentTypeHeader: Consts.contenTypeHeader},
     );
 
     var resBody = json.decode(res.body);
@@ -86,11 +87,10 @@ class ProductApiService {
     };
     ApiResponse apiResponse = ApiResponse(statusResponse: 0);
 
-    Uri uri = Uri.http(Const.urlAuthority,
-        Const.pathServiceProductDelete, queryParameters);
+    Uri uri = Uri.http(Consts.urlAuthority,
+        Consts.pathServiceProductDelete, queryParameters);
     var res = await http.delete(uri,
-        headers: {HttpHeaders.contentTypeHeader: Const.contenTypeHeader, 
-        HttpHeaders.authorizationHeader: Const.contenTypeHeader});
+        headers: {HttpHeaders.contentTypeHeader: Consts.contenTypeHeader});
 
     apiResponse.statusResponse = res.statusCode;
 

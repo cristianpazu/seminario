@@ -1,7 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:proyectorainbox/Const/Constants.dart';
 import 'package:proyectorainbox/bloc/personbloc.dart';
+import 'package:proyectorainbox/const/Constants.dart';
 import 'package:proyectorainbox/model/regitro.dart';
 
 
@@ -22,7 +22,7 @@ class RegistropageState extends State<Registropage>
  @override
   void initState() {
     super.initState();
-    productBloc = ProductBloc(context);
+    productBloc = ProductBloc();
   }
 
   void showInSnackBar(String value) {
@@ -65,8 +65,8 @@ class RegistropageState extends State<Registropage>
               ),
               TextField(
                 decoration: InputDecoration(
-                    hintText: Const.nombre,
-                    labelText: Const.nombre,
+                    hintText: Consts.nombre,
+                    labelText: Consts.nombre,
                     icon: Icon(Icons.people),
                     border: OutlineInputBorder(
                         borderRadius: BorderRadius.circular(20.0))),
@@ -80,8 +80,8 @@ class RegistropageState extends State<Registropage>
               ),
               TextField(
                 decoration: InputDecoration(
-                    hintText: Const.apellido,
-                    labelText: Const.apellido,
+                    hintText: Consts.apellido,
+                    labelText: Consts.apellido,
                     icon: Icon(Icons.person_add),
                     border: OutlineInputBorder(
                         borderRadius: BorderRadius.circular(20.0))),
@@ -95,8 +95,8 @@ class RegistropageState extends State<Registropage>
               ),
               TextField(
                 decoration: InputDecoration(
-                    hintText: Const.cedula,
-                    labelText: Const.cedula,
+                    hintText: Consts.cedula,
+                    labelText: Consts.cedula,
                     icon: Icon(Icons.person_outline),
                     border: OutlineInputBorder(
                         borderRadius: BorderRadius.circular(20.0))),
@@ -109,8 +109,8 @@ class RegistropageState extends State<Registropage>
               ),
               TextField(
                 decoration: InputDecoration(
-                    hintText: Const.placa,
-                    labelText: Const.placa,
+                    hintText: Consts.placa,
+                    labelText: Consts.placa,
                     icon: Icon(Icons.explore),
                     border: OutlineInputBorder(
                         borderRadius: BorderRadius.circular(20.0))),

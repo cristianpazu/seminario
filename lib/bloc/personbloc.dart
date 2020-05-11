@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:proyectorainbox/Const/Constants.dart';
+import 'package:proyectorainbox/const/Constants.dart';
 import 'package:proyectorainbox/model/api_response_model.dart';
 import 'package:proyectorainbox/model/regitro.dart';
 import 'package:proyectorainbox/repository/repository.dart';
@@ -12,12 +12,12 @@ class ProductBloc {
 
   ApiResponse get apiResponse => _apiResponse;
 
-  ProductBloc(BuildContext context);
+  ProductBloc();
 
   Future<ApiResponse> createProduct(Product product) async {
     ApiResponse apiResponse = await _repository.registrarProducto(product);
     if (apiResponse.statusResponse == 200) {
-      apiResponse.message = Const.createMessage;
+      apiResponse.message = Consts.createMessage;
       print(apiResponse.message);
     } else {
       print("el código del error" +
@@ -31,7 +31,7 @@ class ProductBloc {
   Future<ApiResponse>listarProducto()async{
     ApiResponse apiResponse = await _repository.listaproducto();
     if (apiResponse.statusResponse == 200) {
-      apiResponse.message = Const.createMessage;
+      apiResponse.message = Consts.createMessage;
       print(apiResponse.message);
       return apiResponse;
     } else {
@@ -47,7 +47,7 @@ class ProductBloc {
     ApiResponse apiResponse =
         await _repository.eliminarProducto(product);
     if (apiResponse.statusResponse == 200) {
-      apiResponse.message = Const.createMessage;
+      apiResponse.message = Consts.createMessage;
       print(apiResponse.message);
     } else {
       print("el código del error" +
@@ -62,7 +62,7 @@ class ProductBloc {
    Future<ApiResponse> updateProduct(Product product) async {
     ApiResponse apiResponse = await _repository.actualizarProduct(product);
     if (apiResponse.statusResponse == 200) {
-      apiResponse.message = Const.createMessage;
+      apiResponse.message = Consts.createMessage;
       print(apiResponse.message);
     } else {
       print("el código del error" +
