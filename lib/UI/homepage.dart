@@ -108,7 +108,9 @@ class IniciopageState extends State<Iniciopage> {
                         child: Column(
                           children: <Widget>[
                             //Icon(Icons.report_problem),
-                            Icon(Icons.local_parking,),
+                            Icon(
+                              Icons.local_parking,
+                            ),
                             const Text('Registro'),
                           ],
                         ),
@@ -123,35 +125,46 @@ class IniciopageState extends State<Iniciopage> {
                   //To Vehiculos lista
                   InkWell(
                     child: Container(
-                      child: Column(
-                        children: <Widget>[
-                          //Icon(Icons.report_problem),
-                          Icon(Icons.report_problem),
-                          const Text('ver vehiculos parquedos'),
-                        ],
+                      child: Container(
+                        padding: const EdgeInsets.all(40),
+                        child: Column(
+                          children: <Widget>[
+                            //Icon(Icons.report_problem),
+                            Icon(Icons.report_problem),
+                            const Text('Future'),
+                          ],
+                        ),
                       ),
                       padding: const EdgeInsets.all(8),
                       color: Colors.red[400],
                     ),
                   ),
+                  //
                   Container(
-                    child: Column(
-                      children: <Widget>[
-                        //Icon(Icons.report_problem),
-                        Icon(Icons.report_problem),
-                        const Text('en construccion...'),
-                      ],
+                    child: Container(
+                      padding: const EdgeInsets.all(40),
+                      child: Column(
+                        children: <Widget>[
+                          //Icon(Icons.report_problem),
+                          Icon(Icons.report_problem),
+                          const Text('Future'),
+                        ],
+                      ),
                     ),
                     padding: const EdgeInsets.all(8),
                     color: Colors.red[500],
                   ),
+                  //
                   Container(
-                    child: Column(
-                      children: <Widget>[
-                        //Icon(Icons.report_problem),
-                        Icon(Icons.report_problem),
-                        const Text('en construccion...'),
-                      ],
+                    child: Container(
+                      padding: const EdgeInsets.all(40),
+                      child: Column(
+                        children: <Widget>[
+                          //Icon(Icons.report_problem),
+                          Icon(Icons.report_problem),
+                          const Text('Future'),
+                        ],
+                      ),
                     ),
                     padding: const EdgeInsets.all(8),
                     color: Colors.red[600],
