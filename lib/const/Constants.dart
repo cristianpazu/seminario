@@ -26,6 +26,7 @@ static const String urlAuthority = "secret-shelf-33806.herokuapp.com";
   static const String pathServiceDiscardDelete = "";
   static const String pathServiceProductoLista ="/api/v1/personas/get";
   static const String createMessage = "Creación exitosa";
+
   //product
   static const String titleProduct = "Registro de producto";
   static const String titleDespacho = "Detalle de despacho";
