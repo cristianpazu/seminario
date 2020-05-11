@@ -27,7 +27,7 @@ class IniciopageState extends State<Iniciopage> {
           //backgroundColor: Color(0xFF151026),
           backgroundColor: Colors.yellow,
           title: Text(
-            'Parqueadero Manu',
+            'Parqueadero Menu',
             style: TextStyle(
               fontSize: 22,
               fontWeight: FontWeight.w500,
