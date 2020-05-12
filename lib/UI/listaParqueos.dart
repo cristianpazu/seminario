@@ -1,7 +1,3 @@
-
-
-
-
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:proyectorainbox/bloc/parquearbloc.dart';
@@ -17,7 +13,6 @@ class ListaParqueos extends StatefulWidget {
 
 class ListaParqueosState extends State<ListaParqueos>
     with SingleTickerProviderStateMixin {
-
   final GlobalKey<ScaffoldState> _scaffoldKey = GlobalKey<ScaffoldState>();
 
   ParquearBloc parquearBloc;
@@ -52,14 +47,20 @@ class ListaParqueosState extends State<ListaParqueos>
     _handleSubmitted();
   }
 
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(
         key: _scaffoldKey,
         appBar: AppBar(
-          title: Text('Registro de carros'),
-
+          backgroundColor: Colors.yellow,
+          title: Text(
+            'Vehiculos',
+            style: TextStyle(
+              fontSize: 22,
+              fontWeight: FontWeight.w500,
+              color: Colors.black,
+            ),
+          ),
         ),
 
         //body
@@ -94,9 +95,7 @@ class ListaParqueosState extends State<ListaParqueos>
                                   fontSize: 21.0,
                                 ),
                               ),
-
-                              leading: Icon(
-                                  Icons.content_paste,
+                              leading: Icon(Icons.content_paste,
                                   color: Colors.orange),
                               onTap: () {
                                 print(listParquear[indice].persona.nombre);
@@ -104,7 +103,6 @@ class ListaParqueosState extends State<ListaParqueos>
                               },
                             ),
                           ),
-
                         ],
                       ),
                       color: Colors.white,
@@ -113,6 +111,5 @@ class ListaParqueosState extends State<ListaParqueos>
                 ]);
               }),
         ));
-
   }
 }

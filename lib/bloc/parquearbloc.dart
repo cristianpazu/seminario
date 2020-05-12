@@ -5,8 +5,8 @@ import 'package:proyectorainbox/model/api_response_model.dart';
 import 'package:proyectorainbox/model/parquear.dart';
 import 'package:proyectorainbox/repository/repository.dart';
 
-class ParquearBloc{
-var _apiResponse = ApiResponse();
+class ParquearBloc {
+  var _apiResponse = ApiResponse();
   final Repository _repository = Repository();
   ApiResponse get apiResponse => _apiResponse;
 
@@ -26,7 +26,7 @@ var _apiResponse = ApiResponse();
     return apiResponse;
   }
 
-  Future<ApiResponse>listarParquear()async{
+  Future<ApiResponse> listarParquear() async {
     ApiResponse apiResponse = await _repository.listaParquear();
     if (apiResponse.statusResponse == 200) {
       apiResponse.message = Consts.createMessage;
@@ -41,9 +41,8 @@ var _apiResponse = ApiResponse();
     }
   }
 
- Future<ApiResponse> deleteParquear(Parquear parquear) async {
-    ApiResponse apiResponse =
-        await _repository.eliminarParquear(parquear);
+  Future<ApiResponse> deleteParquear(Parquear parquear) async {
+    ApiResponse apiResponse = await _repository.eliminarParquear(parquear);
     if (apiResponse.statusResponse == 200) {
       apiResponse.message = Consts.createMessage;
       print(apiResponse.message);
@@ -56,8 +55,7 @@ var _apiResponse = ApiResponse();
     return apiResponse;
   }
 
-  
-   Future<ApiResponse> updateParquear(Parquear parquear) async {
+  Future<ApiResponse> updateParquear(Parquear parquear) async {
     ApiResponse apiResponse = await _repository.actualizarParquear(parquear);
     if (apiResponse.statusResponse == 200) {
       apiResponse.message = Consts.createMessage;
@@ -70,6 +68,4 @@ var _apiResponse = ApiResponse();
     }
     return apiResponse;
   }
-
 }
-

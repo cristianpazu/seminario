@@ -7,10 +7,10 @@ import 'package:proyectorainbox/model/parquear.dart';
 
 import 'package:http/http.dart' as http;
 
-class ParquearApiservice{
-Parquear _parquear;
+class ParquearApiservice {
+  Parquear _parquear;
 
-  Future<ApiResponse> insertParqueos(Parquear parquear) async{
+  Future<ApiResponse> insertParqueos(Parquear parquear) async {
     ApiResponse apiResponse = ApiResponse(statusResponse: 0);
     var body2 = json.encode(parquear.toJson());
     Uri uri = Uri.http(Consts.urlAuthority, Consts.pathServiceParqueo);
@@ -20,7 +20,7 @@ Parquear _parquear;
     var resBody = json.decode(res.body);
     print(res.statusCode);
     print(resBody);
-    
+
     apiResponse.statusResponse = res.statusCode;
 
     if (apiResponse.statusResponse == 200) {
@@ -34,11 +34,10 @@ Parquear _parquear;
   //heroku pg:psql postgresql-curly-55487 --app servicio123rest bsde mantenimiento
   //databse dc3gj60bqi7bga
 
-   Future<ApiResponse> updateParqueos(Parquear parquear) async {
+  Future<ApiResponse> updateParqueos(Parquear parquear) async {
     ApiResponse apiResponse = ApiResponse(statusResponse: 0);
     var body2 = json.encode(parquear.toJson());
-    Uri uri =
-        Uri.http(Consts.urlAuthority, Consts.pathServiceDiscardDelete);
+    Uri uri = Uri.http(Consts.urlAuthority, Consts.pathServiceDiscardDelete);
     var res = await http.put(uri,
         headers: {HttpHeaders.contentTypeHeader: Consts.contenTypeHeader},
         body: body2);
@@ -55,8 +54,7 @@ Parquear _parquear;
 
   Future<ApiResponse> listParqueos() async {
     ApiResponse apiResponse = ApiResponse(statusResponse: 0);
-    Uri uri =
-        Uri.http(Consts.urlAuthority, Consts.pathServiceParqueoList);
+    Uri uri = Uri.http(Consts.urlAuthority, Consts.pathServiceParqueoList);
     var res = await http.get(
       uri,
       headers: {HttpHeaders.contentTypeHeader: Consts.contenTypeHeader},
@@ -76,6 +74,7 @@ Parquear _parquear;
     }
     return apiResponse;
   }
+
   Future<ApiResponse> deleteParqueos(Parquear parquear) async {
     var queryParameters = {
       'id': parquear.id
@@ -83,14 +82,13 @@ Parquear _parquear;
     };
     ApiResponse apiResponse = ApiResponse(statusResponse: 0);
 
-    Uri uri = Uri.http(Consts.urlAuthority,
-        Consts.pathServiceProductDelete, queryParameters);
+    Uri uri = Uri.http(
+        Consts.urlAuthority, Consts.pathServiceProductDelete, queryParameters);
     var res = await http.delete(uri,
         headers: {HttpHeaders.contentTypeHeader: Consts.contenTypeHeader});
 
     apiResponse.statusResponse = res.statusCode;
 
     return apiResponse;
-
-}
+  }
 }
