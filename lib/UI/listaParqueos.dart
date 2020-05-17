@@ -1,5 +1,10 @@
+
+
+
+
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:proyectorainbox/UI/parquear.dart';
 import 'package:proyectorainbox/bloc/parquearbloc.dart';
 import 'package:proyectorainbox/model/api_response_model.dart';
 import 'package:proyectorainbox/model/parquear.dart';
@@ -52,15 +57,8 @@ class ListaParqueosState extends State<ListaParqueos>
     return Scaffold(
         key: _scaffoldKey,
         appBar: AppBar(
-          backgroundColor: Colors.yellow,
-          title: Text(
-            'Vehiculos',
-            style: TextStyle(
-              fontSize: 22,
-              fontWeight: FontWeight.w500,
-              color: Colors.black,
-            ),
-          ),
+          title: Text('Registro de carros'),
+
         ),
 
         //body
@@ -95,14 +93,31 @@ class ListaParqueosState extends State<ListaParqueos>
                                   fontSize: 21.0,
                                 ),
                               ),
-                              leading: Icon(Icons.content_paste,
+
+                              leading: Icon(
+                                  Icons.content_paste,
                                   color: Colors.orange),
                               onTap: () {
                                 print(listParquear[indice].persona.nombre);
                                 parquear = listParquear[indice];
                               },
                             ),
+                            
                           ),
+                          IconButton(
+                          icon: Icon(
+                            Icons.insert_drive_file,
+                            color: Colors.blue,
+                          ),
+                          onPressed: () {
+                            
+                          
+                                  parquear = listParquear[indice];
+                             _delete(parquear);
+                            
+                          },
+                        ),
+
                         ],
                       ),
                       color: Colors.white,
@@ -111,5 +126,6 @@ class ListaParqueosState extends State<ListaParqueos>
                 ]);
               }),
         ));
+
   }
 }

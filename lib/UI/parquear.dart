@@ -6,6 +6,7 @@ import 'package:proyectorainbox/model/parquear.dart';
 import 'package:proyectorainbox/model/regitro.dart';
 
 class Parquepage extends StatefulWidget {
+ 
   Parquepage({Key key}) : super(key: key);
 
   @override

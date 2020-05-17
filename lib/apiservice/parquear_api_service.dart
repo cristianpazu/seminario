@@ -37,7 +37,8 @@ class ParquearApiservice {
   Future<ApiResponse> updateParqueos(Parquear parquear) async {
     ApiResponse apiResponse = ApiResponse(statusResponse: 0);
     var body2 = json.encode(parquear.toJson());
-    Uri uri = Uri.http(Consts.urlAuthority, Consts.pathServiceDiscardDelete);
+    Uri uri =
+        Uri.http(Consts.urlAuthority, Consts.pathServiceupdateparque);
     var res = await http.put(uri,
         headers: {HttpHeaders.contentTypeHeader: Consts.contenTypeHeader},
         body: body2);
@@ -82,8 +83,8 @@ class ParquearApiservice {
     };
     ApiResponse apiResponse = ApiResponse(statusResponse: 0);
 
-    Uri uri = Uri.http(
-        Consts.urlAuthority, Consts.pathServiceProductDelete, queryParameters);
+    Uri uri = Uri.http(Consts.urlAuthority,
+        Consts.pathServiceParqueDelete, queryParameters);
     var res = await http.delete(uri,
         headers: {HttpHeaders.contentTypeHeader: Consts.contenTypeHeader});
 

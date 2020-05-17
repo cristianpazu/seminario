@@ -1,5 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:proyectorainbox/UI/listaParqueos.dart';
 import 'package:proyectorainbox/UI/listarproducto.dart';
 import 'package:proyectorainbox/UI/operadores.dart';
 import 'package:proyectorainbox/UI/parquear.dart';
@@ -122,31 +123,120 @@ class IniciopageState extends State<Iniciopage> {
                       Navigator.of(context).push(CupertinoPageRoute(
                           builder: (BuildContext context) => Parquepage())),
                     },
-                  ),
-                  //To Vehiculos lista
-                  InkWell(
-                    highlightColor: Colors.orange,
-                    splashColor: Colors.black,
-                    child: Container(                      
-                      color: Colors.red[700].withOpacity(0.5),
-                      child: Container(
-                        padding: const EdgeInsets.all(40),
-                        child: Column(
-                          children: <Widget>[
-                            //Icon(Icons.report_problem),
-                            Icon(Icons.directions_car),
-                            const Text('Parqueo'),
-                          ],
-                        ),
-                      ),
-                      padding: const EdgeInsets.all(8),
-                    ),
-                    onTap: () => {
-                      Navigator.of(context).push(CupertinoPageRoute(
-                          builder: (BuildContext context) => ListaParqueos())),
-                    },
-                  ),
-                ],
+          ),
+          InkWell(
+          child:Container(
+            child: Column(
+             children: <Widget>[
+               //Icon(Icons.report_problem),
+               Icon(Icons.report_problem),
+              const Text('ver vehiculos parquedos'),
+             ],
+           ),
+            padding: const EdgeInsets.all(8),
+            
+            color: Colors.red[400],
+          ),
+            onTap: () => {
+              Navigator.of(context).push(CupertinoPageRoute(
+                  builder: (BuildContext context) => ListaParqueos())),
+            },
+          ),
+         /* Container(
+            child: Column(
+             children: <Widget>[
+               //Icon(Icons.report_problem),
+               Icon(Icons.report_problem),
+              const Text('en construccion...'),
+             ],
+           ),
+            padding: const EdgeInsets.all(8),
+          
+            color: Colors.red[500],
+          ),
+          
+          Container(
+            child: Column(
+             children: <Widget>[
+               //Icon(Icons.report_problem),
+               Icon(Icons.report_problem),
+              const Text('en construccion...'),
+             ],
+           ),
+            padding: const EdgeInsets.all(8),
+       
+            color: Colors.red[600],
+          ),*/
+        ],
+      ),
+    ),
+  ],
+)
+        
+        
+       
+    ///
+    );
+  }
+}
+        /* Row(
+          children: <Widget>[
+            Expanded(
+              child: Container(
+                  child: Card(
+                elevation: 24,
+                child: ListTile(title: Text('Registro'),
+                onTap: (){
+                   Navigator.of(context).push(CupertinoPageRoute(
+                  builder: (BuildContext context)=>Registropage()));
+
+                },
+                
+                ),
+              )),
+            ),
+              Expanded(
+            child: Container(
+              child: Card(
+                elevation: 24,
+                child: ListTile(
+                  title: Text('parquear'),
+               onTap:(){
+                Navigator.of(context).push(CupertinoPageRoute(
+                  builder: (BuildContext context)=>Parquepage()));
+
+               } ,
+                
+                ),
+                
+              ),
+              ),
+              ),
+ Expanded(
+            child: Container(
+              child: Card(
+                elevation: 24,
+                
+                child: ListTile(
+                  title: Text('lista')
+                ),
+              ),
+              ),
+              ),
+ Expanded(
+            child: Container(
+              child: Card(
+                elevation: 24,
+                child: ListTile(
+                  title: Text(' precio'),
+                    onTap:(){
+                Navigator.of(context).push(CupertinoPageRoute(
+                  builder: (BuildContext context)=>Preciopage()));
+
+               } ,
+                ),
+              ),
+              ),
               ),
             ),
           ],
@@ -155,4 +245,4 @@ class IniciopageState extends State<Iniciopage> {
         ///
         );
   }
-}
+}*/

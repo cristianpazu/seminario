@@ -12,7 +12,7 @@ class ProductBloc {
 
   ApiResponse get apiResponse => _apiResponse;
 
-  ProductBloc();
+  //ProductBloc();
 
   Future<ApiResponse> createProduct(Product product) async {
     ApiResponse apiResponse = await _repository.registrarProducto(product);
