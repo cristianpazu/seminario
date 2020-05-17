@@ -42,7 +42,7 @@ class ProductApiService {
     ApiResponse apiResponse = ApiResponse(statusResponse: 0);
     var body2 = json.encode(product.toJson());
     Uri uri =
-        Uri.http(Consts.urlAuthority, Consts.pathServiceDiscardDelete);
+        Uri.http(Consts.urlAuthority, Consts.pathServiceupdate);
     var res = await http.put(uri,
         headers: {HttpHeaders.contentTypeHeader: Consts.contenTypeHeader},
         body: body2);
@@ -88,7 +88,7 @@ class ProductApiService {
     ApiResponse apiResponse = ApiResponse(statusResponse: 0);
 
     Uri uri = Uri.http(Consts.urlAuthority,
-        Consts.pathServiceProductDelete, queryParameters);
+        Consts.pathServiceParqueDelete, queryParameters);
     var res = await http.delete(uri,
         headers: {HttpHeaders.contentTypeHeader: Consts.contenTypeHeader});
 

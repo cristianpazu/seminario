@@ -4,6 +4,7 @@
 
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:proyectorainbox/UI/parquear.dart';
 import 'package:proyectorainbox/bloc/parquearbloc.dart';
 import 'package:proyectorainbox/model/api_response_model.dart';
 import 'package:proyectorainbox/model/parquear.dart';
@@ -43,6 +44,7 @@ class ListaParqueosState extends State<ListaParqueos>
   void _delete(Parquear parquear) {
     parquearBloc.deleteParquear(parquear);
   }
+
 
   @override
   void initState() {
@@ -103,7 +105,21 @@ class ListaParqueosState extends State<ListaParqueos>
                                 parquear = listParquear[indice];
                               },
                             ),
+                            
                           ),
+                          IconButton(
+                          icon: Icon(
+                            Icons.insert_drive_file,
+                            color: Colors.blue,
+                          ),
+                          onPressed: () {
+                            
+                          
+                                  parquear = listParquear[indice];
+                             _delete(parquear);
+                            
+                          },
+                        ),
 
                         ],
                       ),

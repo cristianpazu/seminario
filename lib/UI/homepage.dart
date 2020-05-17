@@ -129,7 +129,7 @@ class IniciopageState extends State<Iniciopage> {
                   builder: (BuildContext context) => ListaParqueos())),
             },
           ),
-          Container(
+         /* Container(
             child: Column(
              children: <Widget>[
                //Icon(Icons.report_problem),
@@ -153,7 +153,7 @@ class IniciopageState extends State<Iniciopage> {
             padding: const EdgeInsets.all(8),
        
             color: Colors.red[600],
-          ),
+          ),*/
         ],
       ),
     ),

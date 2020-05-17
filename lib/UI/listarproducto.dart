@@ -4,6 +4,8 @@ import 'package:proyectorainbox/bloc/personbloc.dart';
 import 'package:proyectorainbox/model/api_response_model.dart';
 import 'package:proyectorainbox/model/regitro.dart';
 
+import 'actualizar.dart';
+
 
 class ListaProducto extends StatefulWidget {
   const ListaProducto({Key key}) : super(key: key);
@@ -98,6 +100,12 @@ class ListaProductoState extends State<ListaProducto>
                             onTap: () {
                               print(listProducto[indice].nombre);
                               product = listProducto[indice];
+                            
+                  Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                            builder: (BuildContext context) =>
+                               ActualizarPersona( product:product)));
                             },
                           ),
                         ),

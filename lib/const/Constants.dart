@@ -20,10 +20,11 @@ static const String urlAuthority = "secret-shelf-33806.herokuapp.com";
   static const String pathServiceDiscard = "/api/inventory/discard/insert";
   static const String pathServiceStatus = "/api/inventory/status/history/insert";
   static const String pathServiceDiscardL = "/api/inventory/discard/all";
-  static const String pathServiceProductDelete = "/api/inventory/product/delete";
+  static const String pathServiceParqueDelete = "/api/v1/parquear";
   static const String pathServiceProductUpdate = "";
   static const String pathServiceStatusUpdate = "";
-  static const String pathServiceDiscardDelete = "";
+  static const String pathServiceupdate = "/api/v1/personas/update";
+  static const String pathServiceupdateparque = "/api/v1/parquear/update";
   static const String pathServiceProductoLista ="/api/v1/personas/get";
   static const String createMessage = "Creación exitosa";
   //product
