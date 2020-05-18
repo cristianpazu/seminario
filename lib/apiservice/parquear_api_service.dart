@@ -77,14 +77,15 @@ class ParquearApiservice {
   }
 
   Future<ApiResponse> deleteParqueos(Parquear parquear) async {
-    var queryParameters = {
-      'id': parquear.id
-          .toString(), //query del id que permite identificr en el servicion el acceso
+    var queryParameters =  {
+       'id':parquear.id
+          .toString() //query del id que permite identificr en el servicion el acceso
     };
     ApiResponse apiResponse = ApiResponse(statusResponse: 0);
 
     Uri uri = Uri.http(Consts.urlAuthority,
-        Consts.pathServiceParqueDelete,queryParameters);
+        Consts.pathServiceParqueDelete, queryParameters );
+        print(uri);
     var res = await http.delete(uri,
         headers: {HttpHeaders.contentTypeHeader: Consts.contenTypeHeader});
 

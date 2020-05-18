@@ -110,8 +110,6 @@ class ListaParqueosState extends State<ListaParqueos>
                             color: Colors.blue,
                           ),
                           onPressed: () {
-                            
-                          
                                   parquear = listParquear[indice];
                              _delete(parquear);
                             
