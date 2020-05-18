@@ -79,7 +79,7 @@ class ListaParqueosState extends State<ListaParqueos>
                           Expanded(
                             child: ListTile(
                               title: Text(
-                                "Placa de Vehiculo : ${listParquear[indice].persona.placa}",
+                                "Placa : ${listParquear[indice].persona.placa}",
                                 style: TextStyle(
                                   color: Colors.blueAccent,
                                   fontSize: 21.0,

@@ -85,7 +85,7 @@ class ListaProductoState extends State<ListaProducto>
                           Expanded(
                             child: ListTile(
                               title: Text(
-                                "Nombre : ${listProducto[indice].nombre}",
+                                "Propietario : ${listProducto[indice].nombre}",
                                 style: TextStyle(
                                   color: Colors.blueAccent,
                                   fontSize: 21.0,
