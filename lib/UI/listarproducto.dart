@@ -111,8 +111,7 @@ class ListaProductoState extends State<ListaProducto>
                             builder: (BuildContext context) =>
                                ActualizarPersona( product:product)));
                               },
-                            ),
-                            
+                            ),   
                           ),
                         ],
                       ),
