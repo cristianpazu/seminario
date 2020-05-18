@@ -123,26 +123,27 @@ class IniciopageState extends State<Iniciopage> {
                       Navigator.of(context).push(CupertinoPageRoute(
                           builder: (BuildContext context) => Parquepage())),
                     },
-          ),
-          InkWell(
-          child:Container(
-            child: Column(
-             children: <Widget>[
-               //Icon(Icons.report_problem),
-               Icon(Icons.report_problem),
-              const Text('ver vehiculos parquedos'),
-             ],
-           ),
-            padding: const EdgeInsets.all(8),
-            
-            color: Colors.red[400],
-          ),
-            onTap: () => {
-              Navigator.of(context).push(CupertinoPageRoute(
-                  builder: (BuildContext context) => ListaParqueos())),
-            },
-          ),
-         /* Container(
+                  ),
+                  InkWell(
+                    highlightColor: Colors.orange,
+                    splashColor: Colors.black,
+                    child: Container(
+                      padding: const EdgeInsets.all(45),
+                      color: Colors.red[900].withOpacity(0.5),
+                      child: Column(
+                        children: <Widget>[
+                          //Icon(Icons.report_problem),
+                          Icon(Icons.time_to_leave),
+                          const Text('Parqueos'),
+                        ],
+                      ),
+                    ),
+                    onTap: () => {
+                      Navigator.of(context).push(CupertinoPageRoute(
+                          builder: (BuildContext context) => ListaParqueos())),
+                    },
+                  ),
+                  /* Container(
             child: Column(
              children: <Widget>[
                //Icon(Icons.report_problem),
@@ -167,19 +168,17 @@ class IniciopageState extends State<Iniciopage> {
        
             color: Colors.red[600],
           ),*/
-        ],
-      ),
-    ),
-  ],
-)
-        
-        
-       
-    ///
-    );
+                ],
+              ),
+            ),
+          ],
+        )
+
+        ///
+        );
   }
 }
-        /* Row(
+/* Row(
           children: <Widget>[
             Expanded(
               child: Container(
