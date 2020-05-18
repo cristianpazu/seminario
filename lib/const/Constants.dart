@@ -17,10 +17,10 @@ class Consts {
   static const String pathServiceParqueoUpdate = "/api/v1/parquear/update";
   static const String pathServiceParqueoDel = "/api/v1/parquear/";
   static const String pathServiceDiscard = "/api/inventory/discard/insert";
-  static const String pathServiceStatus =
-      "/api/inventory/status/history/insert";
+  static const String pathServiceStatus ="/api/inventory/status/history/insert";
   static const String pathServiceDiscardL = "/api/inventory/discard/all";
   static const String pathServiceParqueDelete = "/api/v1/parquear/delete/id";
+  static const String pathServicePersonaDelete = "/api/v1/personas/delete/id";
   static const String pathServiceProductUpdate = "";
   static const String pathServiceStatusUpdate = "";
   static const String pathServiceupdate = "/api/v1/personas/update";
