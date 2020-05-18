@@ -20,7 +20,7 @@ class Consts {
   static const String pathServiceStatus =
       "/api/inventory/status/history/insert";
   static const String pathServiceDiscardL = "/api/inventory/discard/all";
-  static const String pathServiceParqueDelete = "/api/v1/parquear/";
+  static const String pathServiceParqueDelete = "/api/v1/parquear/delete/";
   static const String pathServiceProductUpdate = "";
   static const String pathServiceStatusUpdate = "";
   static const String pathServiceupdate = "/api/v1/personas/update";
