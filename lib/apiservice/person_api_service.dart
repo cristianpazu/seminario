@@ -84,8 +84,8 @@ class ProductApiService {
     };
     ApiResponse apiResponse = ApiResponse(statusResponse: 0);
 
-    Uri uri = Uri.http(Consts.urlAuthority,
-        Consts.pathServicePersonaDelete, queryParameters);
+    Uri uri = Uri.http(Consts.urlAuthority, Consts.pathServicePersonaDelete, queryParameters);
+        print(uri);
     var res = await http.delete(uri,
         headers: {HttpHeaders.contentTypeHeader: Consts.contenTypeHeader});
 
