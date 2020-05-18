@@ -1,5 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:intl/intl.dart';
 import 'package:proyectorainbox/bloc/parquearbloc.dart';
 import 'package:proyectorainbox/bloc/personbloc.dart';
 import 'package:proyectorainbox/model/parquear.dart';
@@ -60,6 +61,8 @@ class ParquepageState extends State<Parquepage>
 
   @override
   Widget build(BuildContext context) {
+    DateTime now = DateTime.now();
+    String formattedDate = DateFormat('kk:mm:ss \n EEE d MMM').format(now);
     return Scaffold(
       appBar: AppBar(
           backgroundColor: Colors.yellow,
@@ -123,9 +126,21 @@ class ParquepageState extends State<Parquepage>
                       onChanged: (valor) {
                         _parquear.estado = valor;
                       }),
-                 //Separacion
+                  //Separacion
                   Padding(
-                    padding: const EdgeInsets.all(130),
+                    padding: const EdgeInsets.all(20),
+                  ),
+                  //
+                  Center(
+                      child: Text(
+                    formattedDate,
+                    textAlign: TextAlign.center,
+                    style: new TextStyle(
+                        fontWeight: FontWeight.bold, fontSize: 25.0),
+                  )),
+                  //Separacion
+                  Padding(
+                    padding: const EdgeInsets.all(80),
                   ),
                   //
 
@@ -141,13 +156,10 @@ class ParquepageState extends State<Parquepage>
                         color: Colors.orangeAccent,
                         onPressed: _handleSubmitted),
                   ),
-
-                  
                 ],
               ),
             ),
-          )
-          ),
+          )),
     );
   }
 }
