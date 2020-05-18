@@ -106,8 +106,8 @@ class ListaParqueosState extends State<ListaParqueos>
                           ),
                           IconButton(
                             icon: Icon(
-                              Icons.insert_drive_file,
-                              color: Colors.blue,
+                              Icons.delete,
+                              color: Colors.red,
                             ),
                             onPressed: () {
                               parquear = listParquear[indice];
