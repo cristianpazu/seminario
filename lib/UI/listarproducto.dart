@@ -113,6 +113,16 @@ class ListaProductoState extends State<ListaProducto>
                               },
                             ),   
                           ),
+                          IconButton(
+                            icon: Icon(
+                              Icons.delete,
+                              color: Colors.red,
+                            ),
+                            onPressed: () {
+                              product = listProducto[indice];
+                              _delete(product);
+                            },
+                          ),
                         ],
                       ),
                       color: Colors.white,

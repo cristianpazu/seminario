@@ -5,10 +5,9 @@ import 'package:proyectorainbox/model/regitro.dart';
 import 'package:proyectorainbox/repository/repository.dart';
 //import 'package:proyectov2/apiService/api_response_model.dart';
 
-
 class ProductBloc {
   final Repository _repository = Repository();
-    var _apiResponse = ApiResponse();
+  var _apiResponse = ApiResponse();
 
   ApiResponse get apiResponse => _apiResponse;
 
@@ -28,7 +27,7 @@ class ProductBloc {
     return apiResponse;
   }
 
-  Future<ApiResponse>listarProducto()async{
+  Future<ApiResponse> listarProducto() async {
     ApiResponse apiResponse = await _repository.listaproducto();
     if (apiResponse.statusResponse == 200) {
       apiResponse.message = Consts.createMessage;
@@ -43,9 +42,8 @@ class ProductBloc {
     }
   }
 
- Future<ApiResponse> deleteProducto(Product product) async {
-    ApiResponse apiResponse =
-        await _repository.eliminarProducto(product);
+  Future<ApiResponse> deleteProducto(Product product) async {
+    ApiResponse apiResponse = await _repository.eliminarProducto(product);
     if (apiResponse.statusResponse == 200) {
       apiResponse.message = Consts.createMessage;
       print(apiResponse.message);
@@ -58,8 +56,7 @@ class ProductBloc {
     return apiResponse;
   }
 
-  
-   Future<ApiResponse> updateProduct(Product product) async {
+  Future<ApiResponse> updateProduct(Product product) async {
     ApiResponse apiResponse = await _repository.actualizarProduct(product);
     if (apiResponse.statusResponse == 200) {
       apiResponse.message = Consts.createMessage;
@@ -72,6 +69,4 @@ class ProductBloc {
     }
     return apiResponse;
   }
-
-
 }
