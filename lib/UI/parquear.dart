@@ -6,7 +6,6 @@ import 'package:proyectorainbox/model/parquear.dart';
 import 'package:proyectorainbox/model/regitro.dart';
 
 class Parquepage extends StatefulWidget {
- 
   Parquepage({Key key}) : super(key: key);
 
   @override
@@ -73,69 +72,82 @@ class ParquepageState extends State<Parquepage>
             ),
           )),
       body: SingleChildScrollView(
-        padding: const EdgeInsets.fromLTRB(30, 40, 30, 30),
+          padding: const EdgeInsets.fromLTRB(30, 40, 30, 30),
           child: Center(
-        child: Form(
-          key: _formKey,
-          autovalidate: _autovalidate,
-          child: Column(
-            children: <Widget>[
-              Padding(
-                padding: const EdgeInsets.all(20),
-              ),
-              TextField(
-                  decoration: InputDecoration(
-                      //hintText: "Estado",
-                      labelText: "Estado",
-                      icon: Icon(Icons.build),
-                      border: OutlineInputBorder(
-                          borderRadius: BorderRadius.circular(20.0))),
-                  onChanged: (valor) {
-                    _parquear.estado = valor;
-                  }),
-              //
-              Padding(
-                padding: const EdgeInsets.all(20),
-              ),
-              DropdownButtonHideUnderline(
-                child: DropdownButton<int>(
-                  hint: Text("Seleccionar"),
-                  value: currentPersona,
-                  isDense: true,
-                  onChanged: (int newValue) {
-                    currentPersona = newValue;
-                    setState(() {
-                      currentPersona = newValue;
-                    });
-                    print(currentPersona);
-                    _parquear.persona.id = newValue;
-                  },
-                  items: listaPersona.map((Product map) {
-                    return DropdownMenuItem<int>(
-                      value: map.id,
-                      child: Text(map.nombre,
-                          style: TextStyle(color: Colors.black)),
-                    );
-                  }).toList(),
-                ),
-              ),
-              Padding(
-                padding: const EdgeInsets.all(20),
-              ),
-              //
-              RaisedButton(
-                  padding: new EdgeInsets.fromLTRB(40, 0, 40, 0),
-                  shape: RoundedRectangleBorder(
-                    borderRadius: BorderRadius.all(Radius.circular(20.0)),
+            child: Form(
+              key: _formKey,
+              autovalidate: _autovalidate,
+              child: Column(
+                children: <Widget>[
+                  InputDecorator(
+                    decoration: const InputDecoration(
+                      icon: const Icon(
+                        Icons.person_pin,
+                      ),
+                    ),
+                    child: DropdownButtonHideUnderline(
+                      child: DropdownButton<int>(
+                        hint: Text("Conductor"),
+                        value: currentPersona,
+                        isDense: true,
+                        onChanged: (int newValue) {
+                          currentPersona = newValue;
+                          setState(() {
+                            currentPersona = newValue;
+                          });
+                          print(currentPersona);
+                          _parquear.persona.id = newValue;
+                        },
+                        items: listaPersona.map((Product map) {
+                          return DropdownMenuItem<int>(
+                            value: map.id,
+                            child: Text(map.nombre,
+                                style: TextStyle(color: Colors.black)),
+                          );
+                        }).toList(),
+                      ),
+                    ),
                   ),
-                  child: Text('Registrar'),
-                  textColor: Colors.black87,
-                  color: Colors.orangeAccent,
-                  onPressed: _handleSubmitted),
-            ],
+                  //Separacion
+                  Padding(
+                    padding: const EdgeInsets.all(20),
+                  ),
+                  //
+                  TextField(
+                      decoration: InputDecoration(
+                          //hintText: "Estado",
+                          labelText: "Estado",
+                          icon: Icon(Icons.build),
+                          border: OutlineInputBorder(
+                              borderRadius: BorderRadius.circular(20.0))),
+                      onChanged: (valor) {
+                        _parquear.estado = valor;
+                      }),
+                 //Separacion
+                  Padding(
+                    padding: const EdgeInsets.all(130),
+                  ),
+                  //
+
+                  Align(
+                    alignment: Alignment.bottomCenter,
+                    child: RaisedButton(
+                        padding: new EdgeInsets.fromLTRB(40, 0, 40, 0),
+                        shape: RoundedRectangleBorder(
+                          borderRadius: BorderRadius.all(Radius.circular(20.0)),
+                        ),
+                        child: Text('Registrar'),
+                        textColor: Colors.black87,
+                        color: Colors.orangeAccent,
+                        onPressed: _handleSubmitted),
+                  ),
+
+                  
+                ],
+              ),
+            ),
+          )
           ),
-        ),
-      )),
     );
   }
 }
