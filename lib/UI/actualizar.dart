@@ -20,7 +20,7 @@ class ActualizarPersonaState extends State<ActualizarPersona>
   ActualizarPersonaState({this.product});
   ProductBloc productBloc;
 
-  Product product;
+  Product product = Product();
 
   @override
   void initState() {
@@ -69,7 +69,8 @@ class ActualizarPersonaState extends State<ActualizarPersona>
               autovalidate: _autovalidate,
               child: Column(
                 children: <Widget>[
-                  TextField(
+                  TextFormField(
+                    initialValue: product.nombre,
                       decoration: InputDecoration(
                           //hintText: Consts.nombre,
                           labelText: Consts.nombre,
@@ -83,7 +84,8 @@ class ActualizarPersonaState extends State<ActualizarPersona>
                   Padding(
                     padding: const EdgeInsets.all(20),
                   ),
-                  TextField(
+                  TextFormField(
+                    initialValue: product.apellido,
                       decoration: InputDecoration(
                           //hintText: Consts.apellido,
                           labelText: Consts.apellido,
@@ -97,7 +99,8 @@ class ActualizarPersonaState extends State<ActualizarPersona>
                   Padding(
                     padding: const EdgeInsets.all(20),
                   ),
-                  TextField(
+                  TextFormField(
+                    initialValue: product.cedula.toString(),
                       decoration: InputDecoration(
                           //hintText: Consts.cedula,
                           labelText: Consts.cedula,
@@ -111,7 +114,8 @@ class ActualizarPersonaState extends State<ActualizarPersona>
                   Padding(
                     padding: const EdgeInsets.all(20),
                   ),
-                  TextField(
+                  TextFormField(
+                    initialValue: product.placa,
                       decoration: InputDecoration(
                           //hintText: Consts.placa,
                           labelText: Consts.placa,
