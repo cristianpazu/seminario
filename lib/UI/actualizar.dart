@@ -1,13 +1,11 @@
-
-
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:proyectorainbox/Const/Constants.dart';
 import 'package:proyectorainbox/bloc/personbloc.dart';
 import 'package:proyectorainbox/model/regitro.dart';
 
-class ActualizarPersona extends StatefulWidget{
-final Product product;
+class ActualizarPersona extends StatefulWidget {
+  final Product product;
   const ActualizarPersona({this.product, Key key}) : super(key: key);
 
   @override
@@ -20,8 +18,7 @@ class ActualizarPersonaState extends State<ActualizarPersona>
   final GlobalKey<ScaffoldState> _scaffoldKey = GlobalKey<ScaffoldState>();
 
   ActualizarPersonaState({this.product});
-   ProductBloc productBloc;
-   
+  ProductBloc productBloc;
 
   Product product;
 
@@ -49,99 +46,99 @@ class ActualizarPersonaState extends State<ActualizarPersona>
       form.save();
       productBloc.updateProduct(product);
     }
-    
   }
-@override
+
+  @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: Text('Actualizar datos')),
+      appBar: AppBar(
+          backgroundColor: Colors.yellow,
+          title: Text(
+            'Actualizar datos',
+            style: TextStyle(
+              fontSize: 22,
+              fontWeight: FontWeight.w500,
+              color: Colors.black,
+            ),
+          )),
       body: SingleChildScrollView(
-          
-        child: Center(
-          child:Form(
-          key: _formKey,
-                autovalidate: _autovalidate,
-          child: Column(
-            children: <Widget>[
-              Padding(
-                padding: const EdgeInsets.all(20),
-              ),
-              TextField(
-                decoration: InputDecoration(
-                    hintText: Consts.nombre,
-                    labelText: Consts.nombre,
-                    icon: Icon(Icons.people),
-                    border: OutlineInputBorder(
-                        borderRadius: BorderRadius.circular(20.0))),
-              onChanged: (valor) {
-                      product.nombre = valor;
-  }
-  ),
-              //
-              Padding(
-                padding: const EdgeInsets.all(20),
-              ),
-              TextField(
-                decoration: InputDecoration(
-                    hintText: Consts.apellido,
-                    labelText: Consts.apellido,
-                    icon: Icon(Icons.person_add),
-                    border: OutlineInputBorder(
-                        borderRadius: BorderRadius.circular(20.0))),
-                         onChanged: (valor) {
-                      product.apellido = valor;
-                         }
-              ),
-              //
-              Padding(
-                padding: const EdgeInsets.all(20),
-              ),
-              TextField(
-                decoration: InputDecoration(
-                    hintText: Consts.cedula,
-                    labelText: Consts.cedula,
-                    icon: Icon(Icons.person_outline),
-                    border: OutlineInputBorder(
-                        borderRadius: BorderRadius.circular(20.0))),
-                         onChanged: (valor) {
-                      product.cedula = int.parse(valor);}
-              ),
-              //
-              Padding(
-                padding: const EdgeInsets.all(20),
-              ),
-              TextField(
-                decoration: InputDecoration(
-                    hintText: Consts.placa,
-                    labelText: Consts.placa,
-                    icon: Icon(Icons.explore),
-                    border: OutlineInputBorder(
-                        borderRadius: BorderRadius.circular(20.0))),
-             onChanged: (valor) {
-                      product.placa = valor;
-             }
-              ),
-              //
+          padding: const EdgeInsets.fromLTRB(30, 40, 30, 30),
+          child: Center(
+            child: Form(
+              key: _formKey,
+              autovalidate: _autovalidate,
+              child: Column(
+                children: <Widget>[
+                  TextField(
+                      decoration: InputDecoration(
+                          //hintText: Consts.nombre,
+                          labelText: Consts.nombre,
+                          icon: Icon(Icons.person_pin),
+                          border: OutlineInputBorder(
+                              borderRadius: BorderRadius.circular(20.0))),
+                      onChanged: (valor) {
+                        product.nombre = valor;
+                      }),
+                  //
+                  Padding(
+                    padding: const EdgeInsets.all(20),
+                  ),
+                  TextField(
+                      decoration: InputDecoration(
+                          //hintText: Consts.apellido,
+                          labelText: Consts.apellido,
+                          icon: Icon(Icons.person_pin),
+                          border: OutlineInputBorder(
+                              borderRadius: BorderRadius.circular(20.0))),
+                      onChanged: (valor) {
+                        product.apellido = valor;
+                      }),
+                  //
+                  Padding(
+                    padding: const EdgeInsets.all(20),
+                  ),
+                  TextField(
+                      decoration: InputDecoration(
+                          //hintText: Consts.cedula,
+                          labelText: Consts.cedula,
+                          icon: Icon(Icons.recent_actors),
+                          border: OutlineInputBorder(
+                              borderRadius: BorderRadius.circular(20.0))),
+                      onChanged: (valor) {
+                        product.cedula = int.parse(valor);
+                      }),
+                  //
+                  Padding(
+                    padding: const EdgeInsets.all(20),
+                  ),
+                  TextField(
+                      decoration: InputDecoration(
+                          //hintText: Consts.placa,
+                          labelText: Consts.placa,
+                          icon: Icon(Icons.directions_car),
+                          border: OutlineInputBorder(
+                              borderRadius: BorderRadius.circular(20.0))),
+                      onChanged: (valor) {
+                        product.placa = valor;
+                      }),
+                  //
 
-              Padding(
-                padding: EdgeInsets.only(top: 50.0),
-              ),
-               RaisedButton(
+                  Padding(
+                    padding: EdgeInsets.only(top: 50.0),
+                  ),
+                  RaisedButton(
                       padding: new EdgeInsets.fromLTRB(40, 0, 40, 0),
                       shape: RoundedRectangleBorder(
                         borderRadius: BorderRadius.all(Radius.circular(20.0)),
                       ),
                       child: Text('Actualizar'),
                       textColor: Colors.black87,
-                      color: Colors.green[500],
+                      color: Colors.orangeAccent,
                       onPressed: _handleSubmitted),
-            ],
-          ),
-        ),
-        )
-      ),
-
+                ],
+              ),
+            ),
+          )),
     );
   }
-    
 }
