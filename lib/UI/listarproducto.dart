@@ -59,13 +59,17 @@ class ListaProductoState extends State<ListaProducto>
         appBar: AppBar(
           backgroundColor: Colors.yellow,
           title: Text(
-            'Registro',
+            'Personas',
             style: TextStyle(
               fontSize: 22,
               fontWeight: FontWeight.w500,
               color: Colors.black,
             ),
           ),
+           actions: <Widget>[
+            IconButton(
+                icon: Icon(Icons.people, color: Colors.black), onPressed: null)
+          ],
         ),
 
         //body
