@@ -45,6 +45,7 @@ class ActualizarPersonaState extends State<ActualizarPersona>
     } else {
       form.save();
       productBloc.updateProduct(product);
+      Navigator.of(context).pop('Retornar home');
     }
   }
 
@@ -70,7 +71,7 @@ class ActualizarPersonaState extends State<ActualizarPersona>
               child: Column(
                 children: <Widget>[
                   TextFormField(
-                    initialValue: product.nombre,
+                      initialValue: product.nombre,
                       decoration: InputDecoration(
                           //hintText: Consts.nombre,
                           labelText: Consts.nombre,
@@ -85,7 +86,7 @@ class ActualizarPersonaState extends State<ActualizarPersona>
                     padding: const EdgeInsets.all(20),
                   ),
                   TextFormField(
-                    initialValue: product.apellido,
+                      initialValue: product.apellido,
                       decoration: InputDecoration(
                           //hintText: Consts.apellido,
                           labelText: Consts.apellido,
@@ -100,8 +101,8 @@ class ActualizarPersonaState extends State<ActualizarPersona>
                     padding: const EdgeInsets.all(20),
                   ),
                   TextFormField(
-                    initialValue: product.cedula.toString(),
-                    keyboardType: TextInputType.number,
+                      initialValue: product.cedula.toString(),
+                      keyboardType: TextInputType.number,
                       decoration: InputDecoration(
                           //hintText: Consts.cedula,
                           labelText: Consts.cedula,
@@ -116,7 +117,7 @@ class ActualizarPersonaState extends State<ActualizarPersona>
                     padding: const EdgeInsets.all(20),
                   ),
                   TextFormField(
-                    initialValue: product.placa,
+                      initialValue: product.placa,
                       decoration: InputDecoration(
                           //hintText: Consts.placa,
                           labelText: Consts.placa,
@@ -139,7 +140,34 @@ class ActualizarPersonaState extends State<ActualizarPersona>
                       child: Text('Actualizar'),
                       textColor: Colors.black87,
                       color: Colors.orangeAccent,
-                      onPressed: _handleSubmitted),
+                      onPressed: () {
+                        showDialog(
+                          context: context,
+                          barrierDismissible: false,
+                          builder: (context) => AlertDialog(
+                            title: Text('Atencion'),
+                            content: Text(
+                                '¿Esta seguro que desea actualizar los datos?'),
+                            actions: <Widget>[
+                              FlatButton(
+                                child: Text('Aceptar'),
+                                onPressed: () {
+                                  Navigator.of(context).pop('Aceptar');
+                                  _handleSubmitted();
+                                },
+                              ),
+                              FlatButton(
+                                child: Text('Cancelar'),
+                                onPressed: () {
+                                  Navigator.of(context).pop('Cancelar');
+                                },
+                              )
+                            ],
+                          ),
+                        ).then((result) {
+                          print(result);
+                        });
+                      }),
                 ],
               ),
             ),
