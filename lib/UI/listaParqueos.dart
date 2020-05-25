@@ -58,13 +58,17 @@ class ListaParqueosState extends State<ListaParqueos>
         appBar: AppBar(
           backgroundColor: Colors.yellow,
           title: Text(
-            'Registro de vehiculo',
+            'Parqueos',
             style: TextStyle(
               fontSize: 22,
               fontWeight: FontWeight.w500,
               color: Colors.black,
             ),
           ),
+            actions: <Widget>[
+            IconButton(
+                icon: Icon(Icons.directions_car, color: Colors.black), onPressed: null)
+          ],
         ),
 
         //body
