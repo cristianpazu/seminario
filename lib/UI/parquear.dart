@@ -154,7 +154,34 @@ class ParquepageState extends State<Parquepage>
                         child: Text('Registrar'),
                         textColor: Colors.black87,
                         color: Colors.orangeAccent,
-                        onPressed: _handleSubmitted),
+                        onPressed: () {
+                          showDialog(
+                            context: context,
+                            barrierDismissible: false,
+                            builder: (context) => AlertDialog(
+                              title: Text('Atencion'),
+                              content: Text(
+                                  '¿Esta seguro que desea regsitrar los datos?'),
+                              actions: <Widget>[
+                                FlatButton(
+                                  child: Text('Aceptar'),
+                                  onPressed: () {
+                                    Navigator.of(context).pop('Aceptar');
+                                    _handleSubmitted();
+                                  },
+                                ),
+                                FlatButton(
+                                  child: Text('Cancelar'),
+                                  onPressed: () {
+                                    Navigator.of(context).pop('Cancelar');
+                                  },
+                                )
+                              ],
+                            ),
+                          ).then((result) {
+                            print(result);
+                          });
+                        }),
                   ),
                 ],
               ),

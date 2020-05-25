@@ -28,14 +28,18 @@ class IniciopageState extends State<Iniciopage> {
         appBar: AppBar(
           //backgroundColor: Color(0xFF151026),
           backgroundColor: Colors.yellow,
-          title: Text(
-            'Parqueadero Menu',
-            style: TextStyle(
-              fontSize: 22,
-              fontWeight: FontWeight.w500,
-              color: Colors.black,
+          title: Center(
+            child: Text(
+              'Bienvenido a parqueo',
+              style: TextStyle(
+                fontSize: 22,
+                fontWeight: FontWeight.w500,
+                color: Colors.black,
+              ),
+              textAlign: TextAlign.center,
             ),
           ),
+          
           actions: <Widget>[
             IconButton(
                 icon: Icon(Icons.traffic, color: Colors.black), onPressed: null)
@@ -45,7 +49,7 @@ class IniciopageState extends State<Iniciopage> {
           primary: false,
           slivers: <Widget>[
             SliverPadding(
-              padding: const EdgeInsets.all(20),
+              padding: const EdgeInsets.fromLTRB(20, 30, 20, 20),
               sliver: SliverGrid.count(
                 crossAxisSpacing: 10,
                 mainAxisSpacing: 10,

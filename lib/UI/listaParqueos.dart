@@ -37,7 +37,10 @@ class ListaParqueosState extends State<ListaParqueos>
   }
 
   void _delete(Parquear parquear) {
-    parquearBloc.deleteParquear(parquear);
+    setState(() {
+      parquearBloc.deleteParquear(parquear);
+      Navigator.of(context).pop();
+    });
   }
 
   @override
@@ -105,15 +108,43 @@ class ListaParqueosState extends State<ListaParqueos>
                             ),
                           ),
                           IconButton(
-                            icon: Icon(
-                              Icons.delete,
-                              color: Colors.red,
-                            ),
-                            onPressed: () {
+                              icon: Icon(
+                                Icons.delete,
+                                color: Colors.red,
+                              ),
+                              /*onPressed: () {
                               parquear = listParquear[indice];
                               _delete(parquear);
-                            },
-                          ),
+                            },*/
+                              onPressed: () {
+                                showDialog(
+                                  context: context,
+                                  barrierDismissible: false,
+                                  builder: (context) => AlertDialog(
+                                    title: Text('Atencion'),
+                                    content: Text(
+                                        '¿Esta seguro que desea eliminar el registro?'),
+                                    actions: <Widget>[
+                                      FlatButton(
+                                        child: Text('Aceptar'),
+                                        onPressed: () {
+                                          Navigator.of(context).pop('Aceptar');
+                                          parquear = listParquear[indice];
+                                          _delete(parquear);
+                                        },
+                                      ),
+                                      FlatButton(
+                                        child: Text('Cancelar'),
+                                        onPressed: () {
+                                          Navigator.of(context).pop('Cancelar');
+                                        },
+                                      )
+                                    ],
+                                  ),
+                                ).then((result) {
+                                  print(result);
+                                });
+                              }),
                         ],
                       ),
                       color: Colors.white,

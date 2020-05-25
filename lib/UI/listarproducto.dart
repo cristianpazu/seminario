@@ -6,7 +6,6 @@ import 'package:proyectorainbox/model/regitro.dart';
 
 import 'actualizar.dart';
 
-
 class ListaProducto extends StatefulWidget {
   const ListaProducto({Key key}) : super(key: key);
 
@@ -16,7 +15,6 @@ class ListaProducto extends StatefulWidget {
 
 class ListaProductoState extends State<ListaProducto>
     with SingleTickerProviderStateMixin {
-
   final GlobalKey<ScaffoldState> _scaffoldKey = GlobalKey<ScaffoldState>();
 
   ProductBloc productBloc;
@@ -40,7 +38,10 @@ class ListaProductoState extends State<ListaProducto>
   }
 
   void _delete(Product product) {
+    setState(() {
     productBloc.deleteProducto(product);
+    Navigator.of(context).pop();
+     });
   }
 
   @override
@@ -106,23 +107,52 @@ class ListaProductoState extends State<ListaProducto>
                                 product = listProducto[indice];
 
                                 Navigator.push(
-                        context,
-                        MaterialPageRoute(
-                            builder: (BuildContext context) =>
-                               ActualizarPersona( product:product)));
+                                    context,
+                                    MaterialPageRoute(
+                                        builder: (BuildContext context) =>
+                                            ActualizarPersona(
+                                                product: product)));
                               },
-                            ),   
+                            ),
                           ),
                           IconButton(
-                            icon: Icon(
-                              Icons.delete,
-                              color: Colors.red,
-                            ),
-                            onPressed: () {
+                              icon: Icon(
+                                Icons.delete,
+                                color: Colors.red,
+                              ),
+                              /*onPressed: () {
                               product = listProducto[indice];
                               _delete(product);
-                            },
-                          ),
+                            },*/
+                              onPressed: () {
+                                showDialog(
+                                  context: context,
+                                  barrierDismissible: false,
+                                  builder: (context) => AlertDialog(
+                                    title: Text('Atencion'),
+                                    content: Text(
+                                        '¿Esta seguro que desea eliminar el registro?'),
+                                    actions: <Widget>[
+                                      FlatButton(
+                                        child: Text('Aceptar'),
+                                        onPressed: () {
+                                          Navigator.of(context).pop('Aceptar');
+                                          product = listProducto[indice];
+                                          _delete(product);
+                                        },
+                                      ),
+                                      FlatButton(
+                                        child: Text('Cancelar'),
+                                        onPressed: () {
+                                          Navigator.of(context).pop('Cancelar');
+                                        },
+                                      )
+                                    ],
+                                  ),
+                                ).then((result) {
+                                  print(result);
+                                });
+                              }),
                         ],
                       ),
                       color: Colors.white,

@@ -61,80 +61,108 @@ class RegistropageState extends State<Registropage>
       body: SingleChildScrollView(
         padding: const EdgeInsets.fromLTRB(30, 40, 30, 30),
         child: Center(
-          child:Form(
-          key: _formKey,
-                autovalidate: _autovalidate,
-          child: Column(
-            children: <Widget>[
-              //Padding(padding: const EdgeInsets.all(5),),
-              TextField(
-                  decoration: InputDecoration(
-                      //hintText: Const.nombre,
-                      labelText: Consts.nombre,
-                      icon: Icon(Icons.person_pin),
-                      border: OutlineInputBorder(
-                          borderRadius: BorderRadius.circular(20.0))),
-                  onChanged: (valor) {
-                    _product.nombre = valor;
-                  }),
-              //
-              Padding(
-                padding: const EdgeInsets.all(20),
-              ),
-              TextField(
-                  decoration: InputDecoration(
-                      //hintText: Const.apellido,
-                      labelText: Consts.apellido,
-                      icon: Icon(Icons.person_pin),
-                      border: OutlineInputBorder(
-                          borderRadius: BorderRadius.circular(20.0))),
-                  onChanged: (valor) {
-                    _product.apellido = valor;
-                  }),
-              //
-              Padding(
-                padding: const EdgeInsets.all(20),
-              ),
-              TextField(
-                  decoration: InputDecoration(
-                      //hintText: Const.cedula,
-                      labelText: Consts.cedula,
-                      icon: Icon(Icons.recent_actors),
-                      border: OutlineInputBorder(
-                          borderRadius: BorderRadius.circular(20.0))),
-                  onChanged: (valor) {
-                    _product.cedula = int.parse(valor);
-                  }),
-              //
-              Padding(
-                padding: const EdgeInsets.all(20),
-              ),
-              TextField(
-                  decoration: InputDecoration(
-                      //hintText: Const.placa,
-                      labelText: Consts.placa,
-                      icon: Icon(Icons.directions_car),
-                      border: OutlineInputBorder(
-                          borderRadius: BorderRadius.circular(20.0))),
-                  onChanged: (valor) {
-                    _product.placa = valor;
-                  }),
-              //
+          child: Form(
+            key: _formKey,
+            autovalidate: _autovalidate,
+            child: Column(
+              children: <Widget>[
+                //Padding(padding: const EdgeInsets.all(5),),
+                TextField(
+                    decoration: InputDecoration(
+                        //hintText: Const.nombre,
+                        labelText: Consts.nombre,
+                        icon: Icon(Icons.person_pin),
+                        border: OutlineInputBorder(
+                            borderRadius: BorderRadius.circular(20.0))),
+                    onChanged: (valor) {
+                      _product.nombre = valor;
+                    }),
+                //
+                Padding(
+                  padding: const EdgeInsets.all(20),
+                ),
+                TextField(
+                    decoration: InputDecoration(
+                        //hintText: Const.apellido,
+                        labelText: Consts.apellido,
+                        icon: Icon(Icons.person_pin),
+                        border: OutlineInputBorder(
+                            borderRadius: BorderRadius.circular(20.0))),
+                    onChanged: (valor) {
+                      _product.apellido = valor;
+                    }),
+                //
+                Padding(
+                  padding: const EdgeInsets.all(20),
+                ),
+                TextField(
+                    decoration: InputDecoration(
+                        //hintText: Const.cedula,
+                        labelText: Consts.cedula,
+                        icon: Icon(Icons.recent_actors),
+                        border: OutlineInputBorder(
+                            borderRadius: BorderRadius.circular(20.0))),
+                    onChanged: (valor) {
+                      _product.cedula = int.parse(valor);
+                    }),
+                //
+                Padding(
+                  padding: const EdgeInsets.all(20),
+                ),
+                TextField(
+                    decoration: InputDecoration(
+                        //hintText: Const.placa,
+                        labelText: Consts.placa,
+                        icon: Icon(Icons.directions_car),
+                        border: OutlineInputBorder(
+                            borderRadius: BorderRadius.circular(20.0))),
+                    onChanged: (valor) {
+                      _product.placa = valor;
+                    }),
+                //
 
-              Padding(
-                padding: EdgeInsets.only(top: 50.0),
-              ),
-              RaisedButton(
-                  padding: new EdgeInsets.fromLTRB(40, 0, 40, 0),
-                  shape: RoundedRectangleBorder(
-                    borderRadius: BorderRadius.all(Radius.circular(20.0)),
-                  ),
-                  child: Text('Registrar'),
-                  textColor: Colors.black87,
-                  color: Colors.orangeAccent,
-                  onPressed: _handleSubmitted),
-            ],
-          ),
+                Padding(
+                  padding: EdgeInsets.only(top: 50.0),
+                ),
+                RaisedButton(
+                    padding: new EdgeInsets.fromLTRB(40, 0, 40, 0),
+                    shape: RoundedRectangleBorder(
+                      borderRadius: BorderRadius.all(Radius.circular(20.0)),
+                    ),
+                    child: Text('Registrar'),
+                    textColor: Colors.black87,
+                    color: Colors.orangeAccent,
+                    //_handleSubmitted
+                    onPressed: () {
+                      showDialog(
+                        context: context,
+                        barrierDismissible: false,
+                        builder: (context) => AlertDialog(
+                          title: Text('Atencion'),
+                          content: Text(
+                              '¿Esta seguro que desea regsitrar los datos?'),
+                          actions: <Widget>[
+                            FlatButton(
+                              child: Text('Aceptar'),
+                              onPressed: () {
+                                Navigator.of(context).pop('Aceptar');
+                                _handleSubmitted();
+                              },
+                            ),
+                            FlatButton(
+                              child: Text('Cancelar'),
+                              onPressed: () {
+                                Navigator.of(context).pop('Cancelar');
+                              },
+                            )
+                          ],
+                        ),
+                      ).then((result) {
+                        print(result);
+                      });
+                    }),
+              ],
+            ),
           ),
         ),
       ),
