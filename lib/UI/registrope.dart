@@ -40,6 +40,7 @@ class RegistropageState extends State<Registropage>
     } else {
       form.save();
       productBloc.createProduct(_product);
+      Navigator.of(context).pop('Retornar home');
       //TecniNavigator.goToHomeI(context);
     }
   }
