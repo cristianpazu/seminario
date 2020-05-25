@@ -127,7 +127,6 @@ class ActualizarPersonaState extends State<ActualizarPersona>
                         product.placa = valor;
                       }),
                   //
-
                   Padding(
                     padding: EdgeInsets.only(top: 50.0),
                   ),
