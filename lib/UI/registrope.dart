@@ -97,6 +97,7 @@ class RegistropageState extends State<Registropage>
                   padding: const EdgeInsets.all(20),
                 ),
                 TextField(
+                    keyboardType: TextInputType.number,
                     decoration: InputDecoration(
                         //hintText: Const.cedula,
                         labelText: Consts.cedula,

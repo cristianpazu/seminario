@@ -101,6 +101,7 @@ class ActualizarPersonaState extends State<ActualizarPersona>
                   ),
                   TextFormField(
                     initialValue: product.cedula.toString(),
+                    keyboardType: TextInputType.number,
                       decoration: InputDecoration(
                           //hintText: Consts.cedula,
                           labelText: Consts.cedula,
