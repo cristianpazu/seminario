@@ -4,6 +4,7 @@ import 'package:proyectorainbox/UI/parquear.dart';
 import 'package:proyectorainbox/bloc/parquearbloc.dart';
 import 'package:proyectorainbox/model/api_response_model.dart';
 import 'package:proyectorainbox/model/parquear.dart';
+import 'package:nominatim_location_picker/nominatim_location_picker.dart';
 
 class ListaParqueos extends StatefulWidget {
   const ListaParqueos({Key key}) : super(key: key);
@@ -51,6 +52,40 @@ class ListaParqueosState extends State<ListaParqueos>
     _handleSubmitted();
   }
 
+   Map _pickedLocation;
+  var _pickedLocationText;
+
+  Future getLocationWithNominatim() async {
+    Map result = await showDialog(
+        context: context,
+        builder: (BuildContext ctx) {
+          return NominatimLocationPicker(
+            searchHint: 'Buscar',
+            awaitingForLocation: "Esperando su localizacion",
+          );
+        });
+    if (result != null) {
+      setState(() => _pickedLocation = result);
+    } else {
+      return;
+    }
+  }
+
+  RaisedButton nominatimButton(Color color, String name, IconData map) {
+    return RaisedButton(
+      color: color,
+      onPressed: () async {
+        await getLocationWithNominatim();
+      },
+      textColor: Colors.white,
+      child: Center(
+        child: Icon(map,color: Colors.black),
+      ),
+      shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(10.0)),
+    );
+  }
+
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -66,6 +101,7 @@ class ListaParqueosState extends State<ListaParqueos>
             ),
           ),
             actions: <Widget>[
+              nominatimButton(Colors.yellow, 'MAPA' , Icons.map),
             IconButton(
                 icon: Icon(Icons.directions_car, color: Colors.black), onPressed: null)
           ],
